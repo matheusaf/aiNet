@@ -1,0 +1,1636 @@
+{
+    "executions_plans": [
+        {
+            "representation_models": [
+                {
+                    "LIWC": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                        }
+                    }
+                },
+                {
+                    "STagger": {
+                        "representation_params": {}
+                    }
+                },
+                {
+                    "MRC2": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                        }
+                    }
+                }
+            ],
+            "model_params": {
+                "distance_method": "cosine"
+            },
+            "fit_params": {
+                "number_of_antibodies": 500,
+                "no_best_cells_taken_each_selection": 15,
+                "clone_multiplier": 10,
+                "pruning_threshold": 0.5,
+                "percent_clones_reselected": 0.10,
+                "suppression_threshold": 0.10,
+                "max_iter": 25
+            },
+            "predict_params": [
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2
+                },
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5,
+                    "minimum_no_edges": 2
+                }
+            ],
+            "dataset_path": "../shared/datasets/Short Texts/SMS/cleansed_data.csv",
+            "text_column": "text",
+            "label_columns": ["classification"],
+            "delimiter": ",",
+            "default_executions": 5
+        },
+        {
+            "representation_models": [
+                {
+                    "LIWC": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                        }
+                    }
+                },
+                {
+                    "STagger": {
+                        "representation_params": {}
+                    }
+                },
+                {
+                    "MRC2": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                        }
+                    }
+                }
+            ],
+            "model_params": {
+                "distance_method": "cosine"
+            },
+            "fit_params": {
+                "number_of_antibodies": 500,
+                "no_best_cells_taken_each_selection": 15,
+                "clone_multiplier": 10,
+                "pruning_threshold": 0.5,
+                "percent_clones_reselected": 0.10,
+                "suppression_threshold": 0.10,
+                "max_iter": 25
+            },
+            "predict_params": [
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2
+                },
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5,
+                    "minimum_no_edges": 2
+                }
+            ],
+            "dataset_path": "../shared/datasets/Short Texts/Truth_Seeker/sample_cleansed_data.csv",
+            "text_column": "tweet",
+            "label_columns": ["3_label_majority_answer", "5_label_majority_answer"],
+            "delimiter": ",",
+            "default_executions": 5
+        },
+        {
+            "representation_models": [
+                {
+                    "LIWC": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                        }
+                    }
+                },
+                {
+                    "STagger": {
+                        "representation_params": {}
+                    }
+                },
+                {
+                    "MRC2": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                        }
+                    }
+                }
+            ],
+            "model_params": {
+                "distance_method": "cosine"
+            },
+            "fit_params": {
+                "number_of_antibodies": 500,
+                "no_best_cells_taken_each_selection": 15,
+                "clone_multiplier": 10,
+                "pruning_threshold": 0.5,
+                "percent_clones_reselected": 0.10,
+                "suppression_threshold": 0.10,
+                "max_iter": 25
+            },
+            "predict_params": [
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2
+                },
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5,
+                    "minimum_no_edges": 2
+                }
+            ],
+            "dataset_path": "../shared/datasets/Short Texts/Truth_Seeker/sample_cleansed_mapped_data.csv",
+            "text_column": "tweet",
+            "label_columns": ["3_truthfulness", "5_truthfulness"],
+            "delimiter": ",",
+            "default_executions": 5
+        },
+        {
+            "representation_models": [
+                {
+                    "LIWC": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                        }
+                    }
+                },
+                {
+                    "STagger": {
+                        "representation_params": {}
+                    }
+                },
+                {
+                    "MRC2": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                        }
+                    }
+                }
+            ],
+            "model_params": {
+                "distance_method": "cosine"
+            },
+            "fit_params": {
+                "number_of_antibodies": 500,
+                "no_best_cells_taken_each_selection": 15,
+                "clone_multiplier": 10,
+                "pruning_threshold": 0.5,
+                "percent_clones_reselected": 0.10,
+                "suppression_threshold": 0.10,
+                "max_iter": 25
+            },
+            "predict_params": [
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2
+                },
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5,
+                    "minimum_no_edges": 2
+                }
+            ],
+            "dataset_path": "../shared/datasets/Reviews/Sentiment Labelled/cleansed_amazon_labelled.csv",
+            "text_column": "text",
+            "label_columns": ["label"],
+            "delimiter": ",",
+            "default_executions": 5
+        },
+        {
+            "representation_models": [
+                {
+                    "LIWC": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                        }
+                    }
+                },
+                {
+                    "STagger": {
+                        "representation_params": {}
+                    }
+                },
+                {
+                    "MRC2": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                        }
+                    }
+                }
+            ],
+            "model_params": {
+                "distance_method": "cosine"
+            },
+            "fit_params": {
+                "number_of_antibodies": 500,
+                "no_best_cells_taken_each_selection": 15,
+                "clone_multiplier": 10,
+                "pruning_threshold": 0.5,
+                "percent_clones_reselected": 0.10,
+                "suppression_threshold": 0.10,
+                "max_iter": 25
+            },
+            "predict_params": [
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2
+                },
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5,
+                    "minimum_no_edges": 2
+                }
+            ],
+            "dataset_path": "../shared/datasets/Reviews/Sentiment Labelled/cleansed_imdb_labelled.csv",
+            "text_column": "text",
+            "label_columns": ["label"],
+            "delimiter": ",",
+            "default_executions": 5
+        },
+        {
+            "representation_models": [
+                {
+                    "LIWC": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                        }
+                    }
+                },
+                {
+                    "STagger": {
+                        "representation_params": {}
+                    }
+                },
+                {
+                    "MRC2": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                        }
+                    }
+                }
+            ],
+            "model_params": {
+                "distance_method": "cosine"
+            },
+            "fit_params": {
+                "number_of_antibodies": 500,
+                "no_best_cells_taken_each_selection": 15,
+                "clone_multiplier": 10,
+                "pruning_threshold": 0.5,
+                "percent_clones_reselected": 0.10,
+                "suppression_threshold": 0.10,
+                "max_iter": 25
+            },
+            "predict_params": [
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2
+                },
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5,
+                    "minimum_no_edges": 2
+                }
+            ],
+            "dataset_path": "../shared/datasets/Reviews/Sentiment Labelled/cleansed_yelp_labelled.csv",
+            "text_column": "text",
+            "label_columns": ["label"],
+            "delimiter": ",",
+            "default_executions": 5
+        },
+        {
+            "representation_models": [
+                {
+                    "LIWC": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                        }
+                    }
+                },
+                {
+                    "STagger": {
+                        "representation_params": {}
+                    }
+                },
+                {
+                    "MRC2": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                        }
+                    }
+                }
+            ],
+            "model_params": {
+                "distance_method": "cosine"
+            },
+            "fit_params": {
+                "number_of_antibodies": 500,
+                "no_best_cells_taken_each_selection": 15,
+                "clone_multiplier": 10,
+                "pruning_threshold": 0.5,
+                "percent_clones_reselected": 0.10,
+                "suppression_threshold": 0.10,
+                "max_iter": 25
+            },
+            "predict_params": [
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2
+                },
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5,
+                    "minimum_no_edges": 2
+                }
+            ],
+            "dataset_path": "../shared/datasets/Reviews/Sentiment Labelled/cleansed_data.csv",
+            "text_column": "text",
+            "label_columns": ["label"],
+            "delimiter": ",",
+            "default_executions": 5
+        },
+        {
+            "representation_models": [
+                {
+                    "LIWC": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                        }
+                    }
+                },
+                {
+                    "STagger": {
+                        "representation_params": {}
+                    }
+                },
+                {
+                    "MRC2": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                        }
+                    }
+                }
+            ],
+            "model_params": {
+                "distance_method": "cosine"
+            },
+            "fit_params": {
+                "number_of_antibodies": 500,
+                "no_best_cells_taken_each_selection": 15,
+                "clone_multiplier": 10,
+                "pruning_threshold": 0.5,
+                "percent_clones_reselected": 0.10,
+                "suppression_threshold": 0.10,
+                "max_iter": 25
+            },
+            "predict_params": [
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2
+                },
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5,
+                    "minimum_no_edges": 2
+                }
+            ],
+            "dataset_path": "../shared/datasets/Reviews/Pitchfork/sample_cleansed_data.csv",
+            "text_column": "review",
+            "label_columns": ["score_class"],
+            "delimiter": ",",
+            "default_executions": 5
+        },
+        {
+            "representation_models": [
+                {
+                    "LIWC": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                        }
+                    }
+                },
+                {
+                    "STagger": {
+                        "representation_params": {}
+                    }
+                },
+                {
+                    "MRC2": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                        }
+                    }
+                }
+            ],
+            "model_params": {
+                "distance_method": "cosine"
+            },
+            "fit_params": {
+                "number_of_antibodies": 500,
+                "no_best_cells_taken_each_selection": 15,
+                "clone_multiplier": 10,
+                "pruning_threshold": 0.5,
+                "percent_clones_reselected": 0.10,
+                "suppression_threshold": 0.10,
+                "max_iter": 25
+            },
+            "predict_params": [
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2
+                },
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5,
+                    "minimum_no_edges": 2
+                }
+            ],
+            "dataset_path": "../shared/datasets/Reviews/DrugReviews/sample_cleansed_train_data.csv",
+            "text_column": "review",
+            "label_columns": ["rating"],
+            "delimiter": ",",
+            "default_executions": 5
+        },
+        {
+            "representation_models": [
+                {
+                    "LIWC": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                        }
+                    }
+                },
+                {
+                    "STagger": {
+                        "representation_params": {}
+                    }
+                },
+                {
+                    "MRC2": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                        }
+                    }
+                }
+            ],
+            "model_params": {
+                "distance_method": "cosine"
+            },
+            "fit_params": {
+                "number_of_antibodies": 500,
+                "no_best_cells_taken_each_selection": 15,
+                "clone_multiplier": 10,
+                "pruning_threshold": 0.5,
+                "percent_clones_reselected": 0.10,
+                "suppression_threshold": 0.10,
+                "max_iter": 25
+            },
+            "predict_params": [
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2
+                },
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5,
+                    "minimum_no_edges": 2
+                }
+            ],
+            "dataset_path": "../shared/datasets/Abstracts/arXiv/sample_filtered_cleansed_data.csv",
+            "text_column": "abstracts",
+            "label_columns": ["major_terms"],
+            "delimiter": ",",
+            "default_executions": 5
+        },
+        {
+            "representation_models": [
+                {
+                    "LIWC": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                        }
+                    }
+                },
+                {
+                    "STagger": {
+                        "representation_params": {}
+                    }
+                },
+                {
+                    "MRC2": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                        }
+                    }
+                }
+            ],
+            "model_params": {
+                "distance_method": "cosine"
+            },
+            "fit_params": {
+                "number_of_antibodies": 500,
+                "no_best_cells_taken_each_selection": 15,
+                "clone_multiplier": 10,
+                "pruning_threshold": 0.5,
+                "percent_clones_reselected": 0.10,
+                "suppression_threshold": 0.10,
+                "max_iter": 25
+            },
+            "predict_params": [
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2
+                },
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5,
+                    "minimum_no_edges": 2
+                }
+            ],
+            "dataset_path": "../shared/datasets/Abstracts/NLP_Research/sample_filtered_cleansed_data.csv",
+            "text_column": "abstract",
+            "label_columns": ["topic"],
+            "delimiter": ",",
+            "default_executions": 5
+        },
+        {
+            "representation_models": [
+                {
+                    "LIWC": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                        }
+                    }
+                },
+                {
+                    "STagger": {
+                        "representation_params": {}
+                    }
+                },
+                {
+                    "MRC2": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                        }
+                    }
+                }
+            ],
+            "model_params": {
+                "distance_method": "cosine"
+            },
+            "fit_params": {
+                "number_of_antibodies": 500,
+                "no_best_cells_taken_each_selection": 15,
+                "clone_multiplier": 10,
+                "pruning_threshold": 0.5,
+                "percent_clones_reselected": 0.10,
+                "suppression_threshold": 0.10,
+                "max_iter": 25
+            },
+            "predict_params": [
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2
+                },
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5,
+                    "minimum_no_edges": 2
+                }
+            ],
+            "dataset_path": "../shared/datasets/Abstracts/Klinger/sample_cleansed_data.csv",
+            "text_column": "abstracts",
+            "label_columns": ["org_category"],
+            "delimiter": ",",
+            "default_executions": 5
+        },
+        {
+            "representation_models": [
+                {
+                    "LIWC": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                        }
+                    }
+                },
+                {
+                    "STagger": {
+                        "representation_params": {}
+                    }
+                },
+                {
+                    "MRC2": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                        }
+                    }
+                }
+            ],
+            "model_params": {
+                "distance_method": "cosine"
+            },
+            "fit_params": {
+                "number_of_antibodies": 500,
+                "no_best_cells_taken_each_selection": 15,
+                "clone_multiplier": 10,
+                "pruning_threshold": 0.5,
+                "percent_clones_reselected": 0.10,
+                "suppression_threshold": 0.10,
+                "max_iter": 25
+            },
+            "predict_params": [
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2
+                },
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5,
+                    "minimum_no_edges": 2
+                }
+            ],
+            "dataset_path": "../shared/datasets/Abstracts/Klinger/sample_filtered_cleansed_joined_data.csv",
+            "text_column": "abstracts",
+            "label_columns": ["method"],
+            "delimiter": ",",
+            "default_executions": 5
+        },
+        {
+            "representation_models": [
+                {
+                    "LIWC": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                        }
+                    }
+                },
+                {
+                    "STagger": {
+                        "representation_params": {}
+                    }
+                },
+                {
+                    "MRC2": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                        }
+                    }
+                }
+            ],
+            "model_params": {
+                "distance_method": "cosine"
+            },
+            "fit_params": {
+                "number_of_antibodies": 500,
+                "no_best_cells_taken_each_selection": 15,
+                "clone_multiplier": 10,
+                "pruning_threshold": 0.5,
+                "percent_clones_reselected": 0.10,
+                "suppression_threshold": 0.10,
+                "max_iter": 25
+            },
+            "predict_params": [
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2
+                },
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5,
+                    "minimum_no_edges": 2
+                }
+            ],
+            "dataset_path": "../shared/datasets/News/NewsPopularity/sample_cleansed_train_file.csv",
+            "text_column": "Headline",
+            "label_columns": ["Topic"],
+            "delimiter": ",",
+            "default_executions": 5
+        },
+        {
+            "representation_models": [
+                {
+                    "LIWC": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                        }
+                    }
+                },
+                {
+                    "STagger": {
+                        "representation_params": {}
+                    }
+                },
+                {
+                    "MRC2": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                        }
+                    }
+                }
+            ],
+            "model_params": {
+                "distance_method": "cosine"
+            },
+            "fit_params": {
+                "number_of_antibodies": 500,
+                "no_best_cells_taken_each_selection": 15,
+                "clone_multiplier": 10,
+                "pruning_threshold": 0.5,
+                "percent_clones_reselected": 0.10,
+                "suppression_threshold": 0.10,
+                "max_iter": 25
+            },
+            "predict_params": [
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2
+                },
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5,
+                    "minimum_no_edges": 2
+                }
+            ],
+            "dataset_path": "../shared/datasets/News/NewsPopularity/sample_cleansed_labelled_train_file.csv",
+            "text_column": "Headline",
+            "label_columns": ["label"],
+            "delimiter": ",",
+            "default_executions": 5
+        },
+        {
+            "representation_models": [
+                {
+                    "LIWC": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                        }
+                    }
+                },
+                {
+                    "STagger": {
+                        "representation_params": {}
+                    }
+                },
+                {
+                    "MRC2": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                        }
+                    }
+                }
+            ],
+            "model_params": {
+                "distance_method": "cosine"
+            },
+            "fit_params": {
+                "number_of_antibodies": 500,
+                "no_best_cells_taken_each_selection": 15,
+                "clone_multiplier": 10,
+                "pruning_threshold": 0.5,
+                "percent_clones_reselected": 0.10,
+                "suppression_threshold": 0.10,
+                "max_iter": 25
+            },
+            "predict_params": [
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2
+                },
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5,
+                    "minimum_no_edges": 2
+                }
+            ],
+            "dataset_path": "../shared/datasets/News/CovidArticles/sample_cleansed_data.csv",
+            "text_column": "content",
+            "label_columns": ["category"],
+            "delimiter": ",",
+            "default_executions": 5
+        },
+        {
+            "representation_models": [
+                {
+                    "LIWC": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                        }
+                    }
+                },
+                {
+                    "STagger": {
+                        "representation_params": {}
+                    }
+                },
+                {
+                    "MRC2": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                        }
+                    }
+                }
+            ],
+            "model_params": {
+                "distance_method": "cosine"
+            },
+            "fit_params": {
+                "number_of_antibodies": 500,
+                "no_best_cells_taken_each_selection": 15,
+                "clone_multiplier": 10,
+                "pruning_threshold": 0.5,
+                "percent_clones_reselected": 0.10,
+                "suppression_threshold": 0.10,
+                "max_iter": 25
+            },
+            "predict_params": [
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2
+                },
+                {
+                    "mst_pruning_type": "average",
+                    "k": 2,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.15,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.25,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.35,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.375,
+                    "minimum_no_edges": 2
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5
+                },
+                {
+                    "mst_pruning_type": "threshold",
+                    "mst_pruning_threshold": 0.5,
+                    "minimum_no_edges": 2
+                }
+            ],
+            "dataset_path": "../shared/datasets/News/WELFake/sample_cleansed_train_file.csv",
+            "text_column": "text",
+            "label_columns": ["label"],
+            "delimiter": ",",
+            "default_executions": 5
+        }
+    ]
+}

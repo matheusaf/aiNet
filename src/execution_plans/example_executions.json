@@ -1,0 +1,238 @@
+{
+    "executions_plans": [
+        {
+            "representation_models": [
+                {
+                    "NGram": {
+                        "representation_params": {
+                            "min_ngram_group": 1,
+                            "max_ngram_group": 1,
+                            "model_type": "count"
+                        }
+                    }
+                },
+                {
+                    "NGram": {
+                        "representation_params": {
+                            "min_ngram_group": 1,
+                            "max_ngram_group": 1,
+                            "model_type": "tf-idf"
+                        }
+                    }
+                },
+                {
+                    "LIWC": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                        }
+                    }
+                },
+                {
+                    "STagger": {
+                        "representation_params": {}
+                    }
+                },
+                {
+                    "MRC2": {
+                        "representation_params": {
+                            "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                        }
+                    }
+                },
+                {
+                    "Word2Vec": {
+                        "representation_params": {
+                            "trained_model": "word2vec-google-news-300"
+                        }
+                    }
+                },
+                {
+                    "Word2Vec": {
+                        "representation_params": {
+                            "min_count": 2,
+                            "window": 5,
+                            "vector_size": 50,
+                            "epochs": 40,
+                            "workers": 8,
+                            "train_algorithm": "cbow"
+                        }
+                    }
+                },
+                {
+                    "Word2Vec": {
+                        "representation_params": {
+                            "min_count": 2,
+                            "window": 5,
+                            "vector_size": 50,
+                            "epochs": 40,
+                            "workers": 8,
+                            "train_algorithm": "skip-gram"
+                        }
+                    }
+                },
+                {
+                    "Word2Vec": {
+                        "representation_params": {
+                            "min_count": 2,
+                            "window": 5,
+                            "vector_size": 300,
+                            "epochs": 40,
+                            "workers": 8,
+                            "train_algorithm": "cbow"
+                        }
+                    }
+                },
+                {
+                    "Word2Vec": {
+                        "representation_params": {
+                            "min_count": 2,
+                            "window": 5,
+                            "vector_size": 300,
+                            "epochs": 40,
+                            "workers": 8,
+                            "train_algorithm": "skip-gram"
+                        }
+                    }
+                },
+                {
+                    "FastText": {
+                        "representation_params": {
+                            "min_count": 2,
+                            "window": 5,
+                            "vector_size": 50,
+                            "epochs": 40,
+                            "workers": 8,
+                            "train_algorithm": "cbow"
+                        }
+                    }
+                },
+                {
+                    "FastText": {
+                        "representation_params": {
+                            "min_count": 2,
+                            "window": 5,
+                            "vector_size": 50,
+                            "epochs": 40,
+                            "workers": 8,
+                            "train_algorithm": "skip-gram"
+                        }
+                    }
+                },
+                {
+                    "FastText": {
+                        "representation_params": {
+                            "min_count": 2,
+                            "window": 5,
+                            "vector_size": 300,
+                            "epochs": 40,
+                            "workers": 8,
+                            "train_algorithm": "cbow"
+                        }
+                    }
+                },
+                {
+                    "FastText": {
+                        "representation_params": {
+                            "min_count": 2,
+                            "window": 5,
+                            "vector_size": 300,
+                            "epochs": 40,
+                            "workers": 8,
+                            "train_algorithm": "skip-gram"
+                        }
+                    }
+                },
+                {
+                    "Doc2Vec": {
+                        "representation_params": {
+                            "min_count": 2,
+                            "window": 5,
+                            "vector_size": 50,
+                            "epochs": 40,
+                            "workers": 8,
+                            "train_algorithm": "PV-DBOW"
+                        }
+                    }
+                },
+                {
+                    "Doc2Vec": {
+                        "representation_params": {
+                            "min_count": 2,
+                            "window": 5,
+                            "vector_size": 50,
+                            "epochs": 40,
+                            "workers": 8,
+                            "train_algorithm": "PV-DM"
+                        }
+                    }
+                },
+                {
+                    "Doc2Vec": {
+                        "representation_params": {
+                            "min_count": 2,
+                            "window": 5,
+                            "vector_size": 300,
+                            "epochs": 40,
+                            "workers": 8,
+                            "train_algorithm": "PV-DBOW"
+                        }
+                    }
+                },
+                {
+                    "Doc2Vec": {
+                        "representation_params": {
+                            "min_count": 2,
+                            "window": 5,
+                            "vector_size": 300,
+                            "epochs": 40,
+                            "workers": 8,
+                            "train_algorithm": "PV-DM"
+                        }
+                    }
+                },
+                {
+                    "SBert": {
+                        "representation_params": {
+                            "model_name": "paraphrase-distilroberta-base-v2"
+                        }
+                    }
+                },
+                {
+                    "SBert": {
+                        "representation_params": {
+                            "model_name": "stsb-roberta-large"
+                        }
+                    }
+                },
+                {
+                    "SBert": {
+                        "representation_params": {
+                            "model_name": "all-MiniLM-L6-v2"
+                        }
+                    }
+                }
+            ],
+            "model_params": {
+                "distance_method": "cosine"
+            },
+            "fit_params": {
+                "number_of_antibodies": 500,
+                "no_best_cells_taken_each_selection": 15,
+                "clone_multiplier": 10,
+                "pruning_threshold": 0.5,
+                "percent_clones_reselected": 0.10,
+                "suppression_threshold": 0.10,
+                "max_iter": 30
+            },
+            "predict_params": {
+                "mst_pruning_type": "average",
+                "k": 2
+            },
+            "dataset_path": "../shared/datasets/Abstracts/Klinger/sample_cleansed_joined_data.csv",
+            "text_column": "abstracts",
+            "label_columns": ["method", "org_category"],
+            "delimiter": ",",
+            "default_executions": 5
+        }
+    ]
+}
