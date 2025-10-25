@@ -3,6 +3,15 @@
         {
             "representation_models": [
                 {
+                    "NGram": {
+                        "representation_params": {
+                            "min_ngram_group": 1,
+                            "max_ngram_group": 1,
+                            "model_type": "tf-idf"
+                        }
+                    }
+                },
+                {
                     "LIWC": {
                         "representation_params": {
                             "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
