@@ -1,4 +1,0 @@
-[virtualenvs]
-create = false
-path = "env"
-in-project = true
