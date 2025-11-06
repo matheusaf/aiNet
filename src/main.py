@@ -19,7 +19,7 @@ stdout.reconfigure(line_buffering=True)  # type: ignore
 
 
 if __name__ == "__main__":
-    spacy.prefer_gpu()  # type: ignore
+    spacy.prefer_gpu() # OR spacy.require_cpu()  # type: ignore
     script_start = time()
     tmp.set_start_method("spawn", force=True)
 
