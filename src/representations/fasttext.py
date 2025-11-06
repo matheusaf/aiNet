@@ -234,30 +234,14 @@ Representation.register(FastText)
 
 
 if __name__ == "__main__":
-    # TRAIN_CORPUS = [
-    #     "Use this metaclass to create an ABC",
-    #     "An ABC can be subclassed directly, and then acts as a mix-in class.",
-    #     "You can also register unrelated concrete classes",
-    #     "(even built-in  classes) and unrelated ABCs as ",
-    #     "virtual subclasses” – these and their descendants will be considered",
-    #     "subclasses of the registering ABC by the built"
-    # ]
-
-    with open(
-        os.path.join(
-            Path(__file__).parents[2],
-            "shared",
-            "datasets",
-            "Reviews",
-            "Sentiment Labelled",
-            "imdb_labelled.train",
-        ),
-        "r+",
-        encoding="utf-8",
-    ) as file:
-        TRAIN_CORPUS = [line.strip("\n") for line in file] * 5
-
-        print(len(TRAIN_CORPUS))
+    TRAIN_CORPUS = [
+        "Use this metaclass to create an ABC",
+        "An ABC can be subclassed directly, and then acts as a mix-in class.",
+        "You can also register unrelated concrete classes",
+        "(even built-in  classes) and unrelated ABCs as ",
+        "virtual subclasses” – these and their descendants will be considered",
+        "subclasses of the registering ABC by the built"
+    ]
 
     ft = FastText(
         train_corpus=TRAIN_CORPUS,
