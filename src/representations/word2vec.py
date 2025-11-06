@@ -270,7 +270,7 @@ if __name__ == "__main__":
         "(even built-in  classes) and unrelated ABCs as ",
         "virtual subclasses” – these and their descendants will be considered",
         "subclasses of the registering ABC by the built",
-    ] * 250
+    ] * 10
 
     bow = Word2Vec.from_trained_model("word2vec-google-news-300", stop_word_removal_enabled=True)
 

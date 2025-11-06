@@ -412,7 +412,7 @@ if __name__ == "__main__":
         """You can also register unrelated concrete classes(even built-in classes)
         and unrelated ABCs as “virtual subclasses” – these and their descendants will be
         considered subclasses of the registering ABC by the built""",
-    ] * 850
+    ] * 10
 
     print(len(data))
 
