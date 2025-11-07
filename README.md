@@ -14,3 +14,10 @@ Code used to generate the experiments for the dissertation `A Study on Different
 **Advisors:**
 * Prof. Dr. Pedro Paulo Balbi de Oliveira
 * Prof. Dr. Leandro Nunes de Castro
+
+
+** How to use**
+You can use aiNet by adding it as a lib to your project
+```bash
+uv pip install https://github.com/matheusaf/aiNet.git
+```
