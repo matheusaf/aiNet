@@ -49,6 +49,11 @@ package = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/ainet"]
+exclude = [
+    "notebooks/*",
+    "notebooks/*",
+    "shared/datasets/**",
+]
 
 [tool.uv.sources]
 en-core-web-sm = { url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.6.0/en_core_web_sm-3.6.0.tar.gz" }
