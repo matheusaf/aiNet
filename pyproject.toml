@@ -51,7 +51,6 @@ package = true
 packages = ["src/ainet"]
 exclude = [
     "notebooks/*",
-    "notebooks/*",
     "shared/datasets/**",
 ]
 
