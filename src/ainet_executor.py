@@ -15,10 +15,10 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import davies_bouldin_score
 from torch import cuda
 
-import representations as representation_models
-import utils.evaluations.clustering_metrics as cmetrics
-from models import AiNet
-from utils import cosine_distances, euclidean_distances, print_progress_bar
+import ainet.representations as representation_models
+import ainet.utils.evaluations.clustering_metrics as cmetrics
+from ainet.models import AiNet
+from ainet.utils import cosine_distances, euclidean_distances, print_progress_bar
 
 
 class AiNetExecutor:

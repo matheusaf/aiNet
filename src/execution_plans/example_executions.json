@@ -228,7 +228,7 @@
                 "mst_pruning_type": "average",
                 "k": 2
             },
-            "dataset_path": "../shared/datasets/Abstracts/Klinger/sample_cleansed_joined_data.csv",
+            "dataset_path": "../shared/datasets/Abstracts/Klinger/sample_filtered_cleansed_joined_data.csv",
             "text_column": "abstracts",
             "label_columns": ["method", "org_category"],
             "delimiter": ",",
