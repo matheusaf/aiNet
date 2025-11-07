@@ -132,7 +132,7 @@ Representation.register(SBert)
 
 
 if __name__ == "__main__":
-    bert = SBert("stsb-roberta-large", stop_word_removal_enabled=True)
+    bert = SBert("sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2", stop_word_removal_enabled=True)
 
     df = bert.generate_representation(
         [

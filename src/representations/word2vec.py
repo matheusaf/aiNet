@@ -272,13 +272,13 @@ if __name__ == "__main__":
         "subclasses of the registering ABC by the built",
     ] * 10
 
-    bow = Word2Vec.from_trained_model("word2vec-google-news-300", stop_word_removal_enabled=True)
+    # bow = Word2Vec.from_trained_model("word2vec-google-news-300", stop_word_removal_enabled=True)
 
-    # bow = Word2Vec(
-    #     train_corpus=TRAIN_CORPUS,  # type: ignore
-    #     stop_word_removal_enabled=True,
-    #     train_algorithm="cbow",
-    # )  # type: ignore
+    bow = Word2Vec(
+        train_corpus=TRAIN_CORPUS,  # type: ignore
+        stop_word_removal_enabled=True,
+        train_algorithm="cbow",
+    )  # type: ignore
     df = bow.generate_representation(
         [*TRAIN_CORPUS, *TRAIN_CORPUS, *TRAIN_CORPUS], as_dataframe=True
     )
