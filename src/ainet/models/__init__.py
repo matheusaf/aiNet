@@ -2,16 +2,10 @@
 	Module containing all immune models
 """
 
+from .ainet import AiNet
+from .sia import SIA
 
-import sys
-
-if "-m" not in sys.argv:
-    from .ainet import AiNet
-    from .sia import SIA
-
-    __all__ = [
-        "AiNet",
-        "SIA"
-    ]
-
-__version__ = "0.5"
+__all__ = [
+    "AiNet",
+    "SIA"
+]

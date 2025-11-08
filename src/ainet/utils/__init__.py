@@ -14,5 +14,3 @@ __all__ = [
     "cosine_distances",
     "plot_dendrogram"
 ]
-
-__version__ = "0.5"
