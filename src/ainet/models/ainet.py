@@ -17,7 +17,7 @@ from numpy.typing import NDArray
 from pandas import unique as pd_unique
 from scipy.sparse.csgraph import minimum_spanning_tree
 
-from utils import cosine_distances, euclidean_distances, print_progress_bar
+from ainet.utils import cosine_distances, euclidean_distances, print_progress_bar
 
 MULTIPROCESSING_ARRAY_TYPE = c_double
 ARRAY_DTYPE = np.float64
@@ -752,14 +752,15 @@ if __name__ == "__main__":
     # from representations import STagger
     from sklearn.preprocessing import MinMaxScaler
 
-    from utils.evaluations.clustering_metrics import (
+    from ainet.utils.evaluations.clustering_metrics import (
         cluster_confusion_matrix,
         map_ypred_to_ytrue
     )
 
     with open(
         os.path.join(
-            os.path.dirname(os.path.dirname(os.path.dirname(__file__))),
+            os.path.dirname(
+                os.path.dirname(os.path.dirname(os.path.dirname(__file__)))),
             "shared", "datasets", "ruspini.csv"),
             # "shared", "datasets", "Sentiment Labelled", "imdb_labelled.txt"),
         encoding="utf-8"

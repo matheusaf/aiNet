@@ -28,7 +28,7 @@ from pandas.core.frame import DataFrame
 from pandas.core.series import Series
 from sklearn.metrics import confusion_matrix
 
-from representations import NGram, Representation
+from ainet.representations import NGram, Representation
 
 
 class SIA:  # type: ignore
@@ -73,7 +73,7 @@ class SIA:  # type: ignore
             Inicialização do SIA
         """
 
-        assert issubclass(type(representation_model), Representation)
+        assert Representation in type(representation_model).__bases__
 
         assert isinstance(fit_threshold, float)\
             and 0 <= fit_threshold <= 1, "fit_threshold precisa estar entre 0 e 1"
@@ -429,4 +429,14 @@ class SIA:  # type: ignore
 
 
 if __name__ == "__main__":
+    sentences =  np.array([
+                    "Use this metaclass to create an ABC.",
+                    "An ABC can be subclassed directly, and then acts as a mix-in class.",
+                    """You can also register unrelated concrete classes
+                    (even built-in  classes) and unrelated ABCs as """,
+                    """virtual subclasses” – these and their descendants will be considered
+                subclasses of the registering ABC by the built""",
+                ])
+    classifications = np.array(list(range(sentences.shape[0])))
     chandelier = SIA(representation_model=NGram(), fit_threshold=0.65)
+    chandelier.fit(sentences, classifications, 3)

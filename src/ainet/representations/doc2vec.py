@@ -15,9 +15,8 @@ from gensim.models.phrases import Phrases
 from pandas import DataFrame
 from spacy.lang.en.stop_words import STOP_WORDS
 
-from utils.text.processing import remove_punctuations
-
 from .representation import Representation
+from ainet.utils.text.processing import remove_punctuations
 
 # PV-DM is analogous to Word2Vec CBOW. The doc-vectors are obtained by training
 # a neural network on the synthetictask of predicting a center word

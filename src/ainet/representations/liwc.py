@@ -17,9 +17,8 @@ import numpy as np
 from pandas import DataFrame
 from sklearn.preprocessing import MinMaxScaler
 
-from utils.text.processing import remove_punctuations
-
 from .representation import Representation
+from ainet.utils.text.processing import remove_punctuations
 
 
 class LIWC(Representation):
@@ -37,7 +36,7 @@ class LIWC(Representation):
 
     def __init__(self, dic_filepath: str | pathlib.PurePath) -> None:
         super().__init__(stop_word_removal_enabled=False)
-        assert os.path.exists(dic_filepath), "LIWC dictionary file not found"
+        assert os.path.exists(dic_filepath), f"LIWC dictionary file `{dic_filepath}` not found"
         self.features = []
         self._representation = np.ndarray([])
         self.__read_dic_(dic_filepath)
@@ -219,7 +218,7 @@ Representation.register(LIWC)
 if __name__ == "__main__":
     dic_path: pathlib.PurePath = pathlib.Path(
         __file__
-    ).parents[2] / "shared" / "dictionaries" / "liwc" / "LIWC2015.dic"
+    ).parents[3] / "shared" / "dictionaries" / "liwc" / "LIWC2015.dic"
 
     assert os.path.exists(dic_path)
 

@@ -11,10 +11,8 @@ from pandas import DataFrame
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from spacy.lang.en.stop_words import STOP_WORDS
 
-import utils.text.processing as text_processing
-
 from .representation import Representation
-
+import ainet.utils.text.processing as text_processing
 
 class NGram(Representation):
     """
