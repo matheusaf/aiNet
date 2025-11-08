@@ -18,6 +18,7 @@ dependencies = [
     "yellowbrick~=1.5",
     "sentence-transformers>=2.2.2,<3",
     "emoji>=2.6.0,<3",
+    "spacy>=3.6,<3.7 ; sys_platform != 'darwin'",
     "spacy[apple]>=3.6,<3.7 ; sys_platform == 'darwin'",
     "fasttext-wheel>=0.9.2,<0.10",
     "torch>=2.2.0",
