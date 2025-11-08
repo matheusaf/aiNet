@@ -170,4 +170,3 @@ if __name__ == "__main__":
     )
 
     print(df)
-    print(df.shape)  # type: ignore

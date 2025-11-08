@@ -8,9 +8,8 @@ from pandas import DataFrame
 from sentence_transformers import SentenceTransformer
 from spacy.lang.en.stop_words import STOP_WORDS
 
-from utils.text.processing import remove_punctuations
-
 from .representation import Representation
+from ainet.utils.text.processing import remove_punctuations
 
 OutputType = Literal[None, "sentence_embedding", "token_embeddings"]
 
@@ -144,7 +143,7 @@ if __name__ == "__main__":
             """You can also register unrelated concrete classes(even built-in classes)
         and unrelated ABCs as “virtual subclasses” – these and their descendants will be
         considered subclasses of the registering ABC by the built""",
-        ],
+        ] * 10,
         as_dataframe=True,
     )
     

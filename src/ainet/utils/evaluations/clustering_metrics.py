@@ -13,7 +13,7 @@ from sklearn.metrics import (
     silhouette_score,
 )
 
-from utils import euclidean_distances
+from ainet.utils import euclidean_distances
 
 def cluster_acc(
     distances: np.ndarray,

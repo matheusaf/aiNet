@@ -12,7 +12,7 @@ import numpy as np
 from pandas import DataFrame
 from spacy.language import Language
 
-import utils.text.processing as text_processing
+import ainet.utils.text.processing as text_processing
 
 
 class Representation(metaclass=ABCMeta):

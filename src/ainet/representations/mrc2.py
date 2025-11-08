@@ -10,10 +10,9 @@ from collections.abc import Callable, Generator
 import numpy as np
 from pandas import DataFrame
 
-from utils.text.processing import remove_all_spaces, remove_punctuations
-
-from .representation import Representation
 from .stagger import STagger
+from .representation import Representation
+from ainet.utils.text.processing import remove_all_spaces, remove_punctuations
 
 
 class MRC2(Representation):
@@ -143,7 +142,7 @@ class MRC2(Representation):
 
         assert (isinstance(dic_filepath, (str, pathlib.Path)) and os.path.exists(dic_filepath)) or (
             has_pickle
-        ), ValueError("dic_filepath is None")
+        ), ValueError(f"{dic_filepath} is invalid")
 
         self.features = self.__numerical_category_names_
         self._representation = np.array([])
@@ -401,7 +400,7 @@ if __name__ == "__main__":
     import time
 
     dic_path: pathlib.Path = (
-        pathlib.Path(__file__).parents[2] / "shared/dictionaries/mrc" / "mrc2.dct"
+        pathlib.Path(__file__).parents[3] / "shared/dictionaries/mrc" / "mrc2.dct"
     )
     mrc = MRC2(dic_filepath=dic_path)
     start = time.time()
@@ -414,12 +413,9 @@ if __name__ == "__main__":
         considered subclasses of the registering ABC by the built""",
     ] * 10
 
-    print(len(data))
-
     df = mrc.generate_representation(
         data,
         as_dataframe=True,
     )
-    print(time.time() - start)
 
     print(df)

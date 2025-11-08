@@ -16,10 +16,8 @@ from gensim.models.word2vec import Word2Vec as GensimWord2Vec
 from pandas import DataFrame
 from spacy.lang.en.stop_words import STOP_WORDS
 
-from utils.text.processing import remove_punctuations
-
 from .representation import Representation
-
+from ainet.utils.text.processing import remove_punctuations
 
 class DocIter:
     """
