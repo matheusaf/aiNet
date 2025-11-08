@@ -10,9 +10,17 @@ Python library implementing the Artificial Immune Network (aiNet) clustering alg
 
 ## Installation
 
+### Using UV
 ```bash
-uv pip install https://github.com/matheusaf/aiNet.git
+uv add git+https://github.com/matheusaf/aiNet.git
 ```
+
+### Using pip
+```bash
+pip install https://github.com/matheusaf/aiNet.git
+```
+
+It's currently compatatible with Python3.10 and Python3.11
 
 ## aiNet Model
 
@@ -100,6 +108,8 @@ N-gram based TF-IDF or count vectorization.
 
 ## Usage
 
+### Basic Example with Word2Vec
+
 ```python
 from ainet.representations import Word2Vec
 from ainet.models import AiNet
@@ -131,6 +141,141 @@ model.fit(
 
 # Get cluster assignments
 predictions = model.predict(normalized_vectors)
+```
+
+### Representation Usage Examples
+
+#### SBert
+```python
+from ainet.representations import SBert
+
+# Initialize with pre-trained model
+sbert = SBert(
+    model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    batch_size=32,
+    normalize_embeddings=False,
+    stop_word_removal_enabled=True
+)
+
+# Generate representations
+features, vectors = sbert.generate_representation(texts)
+# Or as DataFrame
+df = sbert.generate_representation(texts, as_dataframe=True)
+```
+
+#### Doc2Vec
+```python
+from ainet.representations import Doc2Vec
+
+# Train new model
+doc2vec = Doc2Vec(
+    train_corpus=documents,
+    vector_size=100,
+    train_algorithm="PV-DBOW",  # or "PV-DM"
+    window=5,
+    min_count=2,
+    epochs=40,
+    use_bigrams=True,
+    stop_word_removal_enabled=True
+)
+
+# Generate representations
+features, vectors = doc2vec.generate_representation(texts)
+
+# Or load pre-trained model
+doc2vec = Doc2Vec.from_file("model.d2v")
+```
+
+#### FastText
+```python
+from ainet.representations import FastText
+
+# Train new model
+fasttext = FastText(
+    train_corpus=documents,
+    train_algorithm="skip-gram",  # or "cbow"
+    vector_size=300,
+    min_n=3,  # min character n-gram
+    max_n=6,  # max character n-gram
+    window=5,
+    min_count=5,
+    epochs=10,
+    stop_word_removal_enabled=True
+)
+
+# Generate representations
+features, vectors = fasttext.generate_representation(texts)
+
+# Load Facebook pre-trained model
+fasttext = FastText.from_facebook_model("path/to/cc.en.300.bin")
+```
+
+#### LIWC
+```python
+from ainet.representations import LIWC
+from pathlib import Path
+
+# Initialize with LIWC dictionary
+liwc = LIWC(dic_filepath=Path("path/to/LIWC.dic"))
+
+# Generate psycholinguistic features
+features, vectors = liwc.generate_representation(texts)
+
+# Features include word count and 70+ linguistic categories
+df = liwc.generate_representation(texts, as_dataframe=True)
+```
+
+#### MRC2
+```python
+from ainet.representations import MRC2
+from pathlib import Path
+
+# Initialize with MRC dictionary (or load from pickle if exists)
+mrc2 = MRC2(dic_filepath=Path("path/to/mrc2.dct"))
+
+# Generate 43-dimensional linguistic feature vectors
+features, vectors = mrc2.generate_representation(texts)
+
+# Features include phonetic, frequency, semantic properties
+df = mrc2.generate_representation(texts, as_dataframe=True)
+```
+
+#### STagger
+```python
+from ainet.representations import STagger
+
+# Initialize with Stanza POS tagger
+stagger = STagger(spacy_model_name="en_core_web_sm")
+
+# Generate POS tag distributions (17 universal tags)
+features, vectors = stagger.generate_representation(texts)
+
+# Returns normalized frequency of each POS tag
+df = stagger.generate_representation(texts, as_dataframe=True)
+```
+
+#### NGram
+```python
+from ainet.representations import NGram
+
+# TF-IDF vectorization
+ngram_tfidf = NGram(
+    min_ngram_group=1,
+    max_ngram_group=2,
+    model_type="tf-idf",
+    stop_words=None
+)
+
+# Count vectorization
+ngram_count = NGram(
+    min_ngram_group=1,
+    max_ngram_group=3,
+    model_type="count"
+)
+
+# Generate representations
+features, vectors = ngram_tfidf.generate_representation(texts)
+df = ngram_count.generate_representation(texts, as_dataframe=True)
 ```
 
 ## Representation Comparison
