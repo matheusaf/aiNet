@@ -1,0 +1,53 @@
+{
+  "output_folder": "../shared/embeddings",
+  "normalize_embeddings": true,
+  "datasets": [
+    {
+      "path": "shared/datasets/news/file.csv",
+      "text_column": "text",
+      "delimiter": ",",
+      "representations": [
+        {
+          "name": "NGram",
+          "params": {
+            "ngram_range": [1, 2],
+            "max_features": 1000
+          }
+        },
+        {
+          "name": "SBert",
+          "params": {
+            "model_name": "paraphrase-MiniLM-L6-v2"
+          }
+        },
+        {
+          "name": "Word2Vec",
+          "params": {
+            "vector_size": 300,
+            "window": 5,
+            "min_count": 1,
+            "workers": 4,
+            "epochs": 10
+          }
+        }
+      ]
+    },
+    {
+      "path": "shared/datasets/reviews/data.csv",
+      "text_column": "review_text",
+      "delimiter": ",",
+      "representations": [
+        {
+          "name": "SBert",
+          "params": {
+            "model_name": "all-MiniLM-L6-v2"
+          }
+        },
+        {
+          "name": "LIWC",
+          "params": {}
+        }
+      ]
+    }
+  ]
+}
