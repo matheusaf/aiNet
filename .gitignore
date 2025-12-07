@@ -29,4 +29,6 @@ env/
 out/
 venv/
 results/**
-src/representations/bert_models_cache/**
+**/bert_models_cache/**
+*.parquet
+*.parquet.gz

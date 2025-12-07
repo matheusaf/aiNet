@@ -1,53 +1,3834 @@
 {
-  "output_folder": "../shared/embeddings",
-  "normalize_embeddings": true,
-  "datasets": [
-    {
-      "path": "shared/datasets/news/file.csv",
-      "text_column": "text",
-      "delimiter": ",",
-      "representations": [
+    "output_folder": "../shared/embeddings",
+    "normalize_embeddings": false,
+    "datasets": [
         {
-          "name": "NGram",
-          "params": {
-            "ngram_range": [1, 2],
-            "max_features": 1000
-          }
+            "path": "../shared/datasets/Abstracts/arXiv/sample_filtered_cleansed_data.csv",
+            "dataset_name": "arXiv_abstracts",
+            "text_column": "abstracts",
+            "delimiter": ",",
+            "representations": [
+                {
+                    "name": "NGram",
+                    "params": {
+                        "min_ngram_group": 1,
+                        "max_ngram_group": 1,
+                        "model_type": "tf-idf"
+                    }
+                },
+                {
+                    "name": "LIWC",
+                    "params": {
+                        "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                    }
+                },
+                {
+                    "name": "STagger",
+                    "params": {}
+                },
+                {
+                    "name": "MRC2",
+                    "params": {
+                        "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_GOOGLE_NEWS_300",
+                    "params": {
+                        "trained_model": "word2vec-google-news-300"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W15_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 15,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W15_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 15,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_PDBV2",
+                    "params": {
+                        "model_name": "paraphrase-distilroberta-base-v2"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_SRL",
+                    "params": {
+                        "model_name": "stsb-roberta-large"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_AMLMV2",
+                    "params": {
+                        "model_name": "all-MiniLM-L6-v2"
+                    }
+                }
+            ]
         },
         {
-          "name": "SBert",
-          "params": {
-            "model_name": "paraphrase-MiniLM-L6-v2"
-          }
+            "path": "../shared/datasets/Abstracts/Klinger/sample_filtered_cleansed_joined_data.csv",
+            "dataset_name": "Klinger_abstracts",
+            "text_column": "abstracts",
+            "delimiter": ",",
+            "representations": [
+                {
+                    "name": "NGram",
+                    "params": {
+                        "min_ngram_group": 1,
+                        "max_ngram_group": 1,
+                        "model_type": "tf-idf"
+                    }
+                },
+                {
+                    "name": "LIWC",
+                    "params": {
+                        "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                    }
+                },
+                {
+                    "name": "STagger",
+                    "params": {}
+                },
+                {
+                    "name": "MRC2",
+                    "params": {
+                        "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_GOOGLE_NEWS_300",
+                    "params": {
+                        "trained_model": "word2vec-google-news-300"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W15_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 15,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W15_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 15,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_PDBV2",
+                    "params": {
+                        "model_name": "paraphrase-distilroberta-base-v2"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_SRL",
+                    "params": {
+                        "model_name": "stsb-roberta-large"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_AMLMV2",
+                    "params": {
+                        "model_name": "all-MiniLM-L6-v2"
+                    }
+                }
+            ]
         },
         {
-          "name": "Word2Vec",
-          "params": {
-            "vector_size": 300,
-            "window": 5,
-            "min_count": 1,
-            "workers": 4,
-            "epochs": 10
-          }
+            "path": "../shared/datasets/Abstracts/NLP_Research/sample_filtered_cleansed_data.csv",
+            "dataset_name": "NLP_Research_abstracts",
+            "text_column": "abstract",
+            "delimiter": ",",
+            "representations": [
+                {
+                    "name": "NGram",
+                    "params": {
+                        "min_ngram_group": 1,
+                        "max_ngram_group": 1,
+                        "model_type": "tf-idf"
+                    }
+                },
+                {
+                    "name": "LIWC",
+                    "params": {
+                        "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                    }
+                },
+                {
+                    "name": "STagger",
+                    "params": {}
+                },
+                {
+                    "name": "MRC2",
+                    "params": {
+                        "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_GOOGLE_NEWS_300",
+                    "params": {
+                        "trained_model": "word2vec-google-news-300"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W15_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 15,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W15_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 15,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_PDBV2",
+                    "params": {
+                        "model_name": "paraphrase-distilroberta-base-v2"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_SRL",
+                    "params": {
+                        "model_name": "stsb-roberta-large"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_AMLMV2",
+                    "params": {
+                        "model_name": "all-MiniLM-L6-v2"
+                    }
+                }
+            ]
+        },
+        {
+            "path": "../shared/datasets/News/CovidArticles/sample_cleansed_data.csv",
+            "dataset_name": "Covid_Articles_news",
+            "text_column": "content",
+            "delimiter": ",",
+            "representations": [
+                {
+                    "name": "NGram",
+                    "params": {
+                        "min_ngram_group": 1,
+                        "max_ngram_group": 1,
+                        "model_type": "tf-idf"
+                    }
+                },
+                {
+                    "name": "LIWC",
+                    "params": {
+                        "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                    }
+                },
+                {
+                    "name": "STagger",
+                    "params": {}
+                },
+                {
+                    "name": "MRC2",
+                    "params": {
+                        "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_GOOGLE_NEWS_300",
+                    "params": {
+                        "trained_model": "word2vec-google-news-300"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W15_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 15,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W15_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 15,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_PDBV2",
+                    "params": {
+                        "model_name": "paraphrase-distilroberta-base-v2"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_SRL",
+                    "params": {
+                        "model_name": "stsb-roberta-large"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_AMLMV2",
+                    "params": {
+                        "model_name": "all-MiniLM-L6-v2"
+                    }
+                }
+            ]
+        },
+        {
+            "path": "../shared/datasets/News/NewsPopularity/sample_cleansed_train_file.csv",
+            "dataset_name": "News_Popularity_news",
+            "text_column": "Headline",
+            "delimiter": ",",
+            "representations": [
+                {
+                    "name": "NGram",
+                    "params": {
+                        "min_ngram_group": 1,
+                        "max_ngram_group": 1,
+                        "model_type": "tf-idf"
+                    }
+                },
+                {
+                    "name": "LIWC",
+                    "params": {
+                        "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                    }
+                },
+                {
+                    "name": "STagger",
+                    "params": {}
+                },
+                {
+                    "name": "MRC2",
+                    "params": {
+                        "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_GOOGLE_NEWS_300",
+                    "params": {
+                        "trained_model": "word2vec-google-news-300"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W15_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 15,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W15_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 15,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_PDBV2",
+                    "params": {
+                        "model_name": "paraphrase-distilroberta-base-v2"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_SRL",
+                    "params": {
+                        "model_name": "stsb-roberta-large"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_AMLMV2",
+                    "params": {
+                        "model_name": "all-MiniLM-L6-v2"
+                    }
+                }
+            ]
+        },
+        {
+            "path": "../shared/datasets/News/WELFake/sample_cleansed_train_file.csv",
+            "dataset_name": "WELFake_news",
+            "text_column": "text",
+            "delimiter": ",",
+            "representations": [
+                {
+                    "name": "NGram",
+                    "params": {
+                        "min_ngram_group": 1,
+                        "max_ngram_group": 1,
+                        "model_type": "tf-idf"
+                    }
+                },
+                {
+                    "name": "LIWC",
+                    "params": {
+                        "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                    }
+                },
+                {
+                    "name": "STagger",
+                    "params": {}
+                },
+                {
+                    "name": "MRC2",
+                    "params": {
+                        "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_GOOGLE_NEWS_300",
+                    "params": {
+                        "trained_model": "word2vec-google-news-300"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W15_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 15,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W15_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 15,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_PDBV2",
+                    "params": {
+                        "model_name": "paraphrase-distilroberta-base-v2"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_SRL",
+                    "params": {
+                        "model_name": "stsb-roberta-large"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_AMLMV2",
+                    "params": {
+                        "model_name": "all-MiniLM-L6-v2"
+                    }
+                }
+            ]
+        },
+        {
+            "path": "../shared/datasets/Reviews/DrugReviews/sample_cleansed_train_data.csv",
+            "dataset_name": "Drug_Reviews_reviews",
+            "text_column": "review",
+            "delimiter": ",",
+            "representations": [
+                {
+                    "name": "NGram",
+                    "params": {
+                        "min_ngram_group": 1,
+                        "max_ngram_group": 1,
+                        "model_type": "tf-idf"
+                    }
+                },
+                {
+                    "name": "LIWC",
+                    "params": {
+                        "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                    }
+                },
+                {
+                    "name": "STagger",
+                    "params": {}
+                },
+                {
+                    "name": "MRC2",
+                    "params": {
+                        "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_GOOGLE_NEWS_300",
+                    "params": {
+                        "trained_model": "word2vec-google-news-300"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W15_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 15,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W15_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 15,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_PDBV2",
+                    "params": {
+                        "model_name": "paraphrase-distilroberta-base-v2"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_SRL",
+                    "params": {
+                        "model_name": "stsb-roberta-large"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_AMLMV2",
+                    "params": {
+                        "model_name": "all-MiniLM-L6-v2"
+                    }
+                }
+            ]
+        },
+        {
+            "path": "../shared/datasets/Reviews/Pitchfork/sample_cleansed_data.csv",
+            "dataset_name": "Pitchfork_reviews",
+            "text_column": "review",
+            "delimiter": ",",
+            "representations": [
+                {
+                    "name": "NGram",
+                    "params": {
+                        "min_ngram_group": 1,
+                        "max_ngram_group": 1,
+                        "model_type": "tf-idf"
+                    }
+                },
+                {
+                    "name": "LIWC",
+                    "params": {
+                        "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                    }
+                },
+                {
+                    "name": "STagger",
+                    "params": {}
+                },
+                {
+                    "name": "MRC2",
+                    "params": {
+                        "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_GOOGLE_NEWS_300",
+                    "params": {
+                        "trained_model": "word2vec-google-news-300"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W15_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 15,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W15_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 15,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_PDBV2",
+                    "params": {
+                        "model_name": "paraphrase-distilroberta-base-v2"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_SRL",
+                    "params": {
+                        "model_name": "stsb-roberta-large"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_AMLMV2",
+                    "params": {
+                        "model_name": "all-MiniLM-L6-v2"
+                    }
+                }
+            ]
+        },
+        {
+            "path": "../shared/datasets/Reviews/Sentiment Labelled/cleansed_data.csv",
+            "dataset_name": "Sentiment_Labelled_reviews",
+            "text_column": "text",
+            "delimiter": ",",
+            "representations": [
+                {
+                    "name": "NGram",
+                    "params": {
+                        "min_ngram_group": 1,
+                        "max_ngram_group": 1,
+                        "model_type": "tf-idf"
+                    }
+                },
+                {
+                    "name": "LIWC",
+                    "params": {
+                        "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                    }
+                },
+                {
+                    "name": "STagger",
+                    "params": {}
+                },
+                {
+                    "name": "MRC2",
+                    "params": {
+                        "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_GOOGLE_NEWS_300",
+                    "params": {
+                        "trained_model": "word2vec-google-news-300"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W15_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 15,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W15_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 15,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_PDBV2",
+                    "params": {
+                        "model_name": "paraphrase-distilroberta-base-v2"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_SRL",
+                    "params": {
+                        "model_name": "stsb-roberta-large"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_AMLMV2",
+                    "params": {
+                        "model_name": "all-MiniLM-L6-v2"
+                    }
+                }
+            ]
+        },
+        {
+            "path": "../shared/datasets/Short Texts/SMS/cleansed_data.csv",
+            "dataset_name": "SMS_short_texts",
+            "text_column": "text",
+            "delimiter": ",",
+            "representations": [
+                {
+                    "name": "NGram",
+                    "params": {
+                        "min_ngram_group": 1,
+                        "max_ngram_group": 1,
+                        "model_type": "tf-idf"
+                    }
+                },
+                {
+                    "name": "LIWC",
+                    "params": {
+                        "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                    }
+                },
+                {
+                    "name": "STagger",
+                    "params": {}
+                },
+                {
+                    "name": "MRC2",
+                    "params": {
+                        "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_GOOGLE_NEWS_300",
+                    "params": {
+                        "trained_model": "word2vec-google-news-300"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W15_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 15,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W15_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 15,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_PDBV2",
+                    "params": {
+                        "model_name": "paraphrase-distilroberta-base-v2"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_SRL",
+                    "params": {
+                        "model_name": "stsb-roberta-large"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_AMLMV2",
+                    "params": {
+                        "model_name": "all-MiniLM-L6-v2"
+                    }
+                }
+            ]
+        },
+        {
+            "path": "../shared/datasets/Short Texts/Truth_Seeker/sample_cleansed_data.csv",
+            "dataset_name": "Truth_Seeker_short_texts",
+            "text_column": "abstracts",
+            "delimiter": ",",
+            "representations": [
+                {
+                    "name": "NGram",
+                    "params": {
+                        "min_ngram_group": 1,
+                        "max_ngram_group": 1,
+                        "model_type": "tf-idf"
+                    }
+                },
+                {
+                    "name": "LIWC",
+                    "params": {
+                        "dic_filepath": "../shared/dictionaries/liwc/LIWC2015.dic"
+                    }
+                },
+                {
+                    "name": "STagger",
+                    "params": {}
+                },
+                {
+                    "name": "MRC2",
+                    "params": {
+                        "dic_filepath": "../shared/dictionaries/mrc/mrc2.dct"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_GOOGLE_NEWS_300",
+                    "params": {
+                        "trained_model": "word2vec-google-news-300"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_CBOW_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "Word2Vec",
+                    "export_path": "Word2Vec_SKIPGRAM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_CBOW_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "cbow"
+                    }
+                },
+                {
+                    "name": "FastText",
+                    "export_path": "FastText_SKIPGRAM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "skip-gram"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W5_VS50",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W15_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 15,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W10_VS50",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 50,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W5_VS300",
+                    "params": {
+                        "min_count": 2,
+                        "window": 5,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDBOW_W15_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 15,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DBOW"
+                    }
+                },
+                {
+                    "name": "Doc2Vec",
+                    "export_path": "Doc2Vec_PVDM_W10_VS300",
+                    "params": {
+                        "min_count": 5,
+                        "window": 10,
+                        "vector_size": 300,
+                        "epochs": 25,
+                        "workers": 8,
+                        "train_algorithm": "PV-DM"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_PDBV2",
+                    "params": {
+                        "model_name": "paraphrase-distilroberta-base-v2"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_SRL",
+                    "params": {
+                        "model_name": "stsb-roberta-large"
+                    }
+                },
+                {
+                    "name": "SBert",
+                    "export_path": "SBERT_AMLMV2",
+                    "params": {
+                        "model_name": "all-MiniLM-L6-v2"
+                    }
+                }
+            ]
         }
-      ]
-    },
-    {
-      "path": "shared/datasets/reviews/data.csv",
-      "text_column": "review_text",
-      "delimiter": ",",
-      "representations": [
-        {
-          "name": "SBert",
-          "params": {
-            "model_name": "all-MiniLM-L6-v2"
-          }
-        },
-        {
-          "name": "LIWC",
-          "params": {}
-        }
-      ]
-    }
-  ]
+    ]
 }

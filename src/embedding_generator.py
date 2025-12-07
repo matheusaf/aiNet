@@ -11,6 +11,7 @@ import gc
 import json
 import logging as lg
 import os
+from datetime import datetime
 from pathlib import Path
 from time import time
 from typing import Any
@@ -77,15 +78,41 @@ class EmbeddingGenerator:
         )
 
     def __setup_logger_(self) -> lg.Logger:
-        """Setup default logger."""
-        logger = lg.getLogger(__name__)
+        """Setup default logger with file and console handlers."""
+        logger = lg.getLogger("root")
         logger.setLevel(lg.DEBUG)
+
+        # File handler
+        log_dir = os.path.join(
+            os.path.dirname(os.path.dirname(__file__)),
+            "logs",
+        )
+        os.makedirs(log_dir, exist_ok=True)
+
+        file_logger = lg.FileHandler(
+            filename=os.path.join(
+                log_dir,
+                f"log_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log",
+            ),
+            encoding="utf-8",
+        )
+        file_logger.setLevel(lg.DEBUG)
+        file_logger.setFormatter(
+            lg.Formatter(
+                "(%(asctime)s)[%(levelname)s:%(name)s] "
+                "%(module)s.%(filename)s.%(funcName)s => | %(message)s |"
+            )
+        )
+        file_logger.addFilter(lg.Filter(name="root"))
 
         # Console handler
         console_handler = lg.StreamHandler()
         console_handler.setLevel(lg.INFO)
-        formatter = lg.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
-        console_handler.setFormatter(formatter)
+        console_handler.setFormatter(
+            lg.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+        )
+
+        logger.addHandler(file_logger)
         logger.addHandler(console_handler)
 
         return logger
@@ -156,7 +183,11 @@ class EmbeddingGenerator:
         return dataset
 
     def __instantiate_representation_(
-        self, representation_name: str, representation_params: dict, dataset_df: pd.DataFrame
+        self,
+        representation_name: str,
+        representation_params: dict,
+        dataset_df: pd.DataFrame,
+        text_column: str,
     ) -> Any:
         """
         Instantiate a representation model.
@@ -165,6 +196,7 @@ class EmbeddingGenerator:
             representation_name: Name of the representation method
             representation_params: Parameters for the representation
             dataset_df: Dataset DataFrame
+            text_column: Name of text column
 
         Returns:
             Instantiated representation model
@@ -176,7 +208,7 @@ class EmbeddingGenerator:
             "trained_model", False
         ):
             if "train_corpus" not in params:
-                params["train_corpus"] = dataset_df.iloc[:, 0].tolist()
+                params["train_corpus"] = dataset_df[text_column].tolist()
 
         self.__logger_.debug(
             "Instantiating representation model '%s' with params %s",
@@ -240,7 +272,7 @@ class EmbeddingGenerator:
 
         # Instantiate representation model
         representation_model = self.__instantiate_representation_(
-            representation_name, representation_params, dataset_df
+            representation_name, representation_params, dataset_df, text_column
         )
 
         # Generate representation
@@ -274,6 +306,7 @@ class EmbeddingGenerator:
         features: np.ndarray,
         dataset_name: str,
         representation_name: str,
+        export_name :str,
         output_folder: str,
         metadata: dict | None = None,
     ) -> None:
@@ -290,24 +323,29 @@ class EmbeddingGenerator:
         """
         save_start = time()
 
+        final_export_name = export_name if export_name is not None else representation_name
+
         # Create output folder if it doesn't exist
         os.makedirs(output_folder, exist_ok=True)
+        os.makedirs(os.path.join(output_folder, dataset_name), exist_ok=True)
+
+        # Ensure feature names are strings (required for parquet)
+        string_features = np.array(features).astype(str).tolist()
 
         # Create DataFrame from embeddings
-        feature_columns = [f"feat_{i}" for i in range(embeddings.shape[1])]
-        df = pd.DataFrame(embeddings, columns=feature_columns)
+        df = pd.DataFrame(embeddings, columns=string_features)
 
         # Add metadata columns
-        df["dataset"] = dataset_name
-        df["representation"] = representation_name
+        df["$dataset"] = dataset_name
+        df["$representation"] = representation_name
 
         if metadata:
             for key, value in metadata.items():
-                df[f"meta_{key}"] = str(value)
+                df[f"$meta_{key}"] = str(value)
 
         # Save to parquet
         output_path = os.path.join(
-            output_folder, f"{dataset_name}_{representation_name}.parquet"
+            output_folder, dataset_name, f"{final_export_name}.parquet"
         )
         df.to_parquet(output_path, index=True, compression="snappy")
 
@@ -319,7 +357,8 @@ class EmbeddingGenerator:
         """Clean up memory and CUDA cache."""
         clean_start = time()
 
-        # Run garbage collection
+        # Run garbage collection multiple times to ensure cleanup
+        gc.collect()
         gc.collect()
 
         # Clear CUDA cache
@@ -327,7 +366,9 @@ class EmbeddingGenerator:
             cuda.empty_cache()
             cuda.synchronize()
 
-        self.__logger_.debug("Cleaned memory and CUDA cache in %0.5f second(s)", time() - clean_start)
+        self.__logger_.debug(
+            "Cleaned memory and CUDA cache in %0.5f second(s)", time() - clean_start
+        )
 
     def generate_all_embeddings(self) -> None:
         """
@@ -361,7 +402,7 @@ class EmbeddingGenerator:
 
             # Convert relative paths to absolute
             if not os.path.isabs(dataset_path):
-                base_dir = os.path.dirname(os.path.dirname(__file__))
+                base_dir = os.path.dirname(__file__)
                 dataset_path = os.path.join(base_dir, dataset_path)
 
             # Get dataset-specific settings with defaults
@@ -369,7 +410,10 @@ class EmbeddingGenerator:
             delimiter = dataset_config.get("delimiter", ",")
             representations = dataset_config.get("representations", [])
 
-            dataset_name = Path(dataset_path).stem
+            dataset_name = dataset_config.get(
+                "dataset_name",
+                Path(dataset_path).stem
+            )
             total_representations = len(representations)
 
             self.__logger_.info(
@@ -400,6 +444,8 @@ class EmbeddingGenerator:
                         )
                         continue
 
+                    repr_export_name = repr_config.get("export_path", None)
+
                     repr_params = repr_config.get("params", {})
 
                     self.__logger_.info(
@@ -425,6 +471,7 @@ class EmbeddingGenerator:
                             features=features,
                             dataset_name=dataset_name,
                             representation_name=repr_name,
+                            export_name=repr_export_name,
                             output_folder=output_folder,
                             metadata={"params": repr_params},
                         )
@@ -488,29 +535,29 @@ def main():
         required=True,
         help="Path to JSON configuration file (required)",
     )
-    parser.add_argument(
-        "--output-folder", "-o", type=str, default=None, help="Override output folder for parquet files"
-    )
-    parser.add_argument("--log-level", type=str, default="INFO", help="Logging level")
+    # parser.add_argument(
+    #     "--output-folder", "-o", type=str, default=None, help="Override output folder for parquet files"
+    # )
+    # parser.add_argument("--log-level", type=str, default="INFO", help="Logging level")
 
     args = parser.parse_args()
 
     # Setup logger
-    logger = lg.getLogger(__name__)
-    logger.setLevel(getattr(lg, args.log_level.upper()))
+    # logger = lg.getLogger(__name__)
+    # logger.setLevel(getattr(lg, args.log_level.upper()))
 
-    console_handler = lg.StreamHandler()
-    console_handler.setLevel(getattr(lg, args.log_level.upper()))
-    formatter = lg.Formatter("%(asctime)s - %(levelname)s - %(message)s")
-    console_handler.setFormatter(formatter)
-    logger.addHandler(console_handler)
+    # console_handler = lg.StreamHandler()
+    # console_handler.setLevel(getattr(lg, args.log_level.upper()))
+    # formatter = lg.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+    # console_handler.setFormatter(formatter)
+    # logger.addHandler(console_handler)
 
     # Create generator
-    generator = EmbeddingGenerator(config_path=args.config, logger=logger)
+    generator = EmbeddingGenerator(config_path=args.config)
 
     # Override config with command-line arguments if provided
-    if args.output_folder:
-        generator._EmbeddingGenerator__config_["output_folder"] = args.output_folder
+    # if args.output_folder:
+    #     generator._EmbeddingGenerator__config_["output_folder"] = args.output_folder
 
     # Generate embeddings
     generator.generate_all_embeddings()
