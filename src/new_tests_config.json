@@ -1,0 +1,4471 @@
+{
+	"output_folder": "../new_tests/cluster_results",
+	"plans": [
+		{
+			"models": [
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 2,
+						"init": "k-means++",
+						"random_state": 42,
+						"algorithm": "lloyd"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 2,
+						"init": "random",
+						"random_state": 42,
+						"algorithm": "elkan"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 2,
+						"init": "k-means++",
+						"random_state": 42,
+						"algorithm": "lloyd"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 2,
+						"init": "random",
+						"random_state": 42,
+						"algorithm": "elkan"
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 20,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 20,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.5
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.5
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.5
+					}
+				}
+			],
+			"representations": [
+				{
+					"name": "NGram",
+					"klass": "NGram",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/NGram.parquet"
+				},
+				{
+					"name": "LIWC",
+					"klass": "LIWC",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/LIWC.parquet"
+				},
+				{
+					"name": "STagger",
+					"klass": "STagger",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/STagger.parquet"
+				},
+				{
+					"name": "MRC2",
+					"klass": "MRC2",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/MRC2.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W10_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/Word2Vec_CBOW_W10_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W10_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/Word2Vec_CBOW_W10_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W5_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/Word2Vec_CBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W5_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/Word2Vec_CBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_GOOGLE_NEWS_300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/Word2Vec_GOOGLE_NEWS_300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W10_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/Word2Vec_SKIPGRAM_W10_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W10_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/Word2Vec_SKIPGRAM_W10_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W5_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/Word2Vec_SKIPGRAM_W5_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W5_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/Word2Vec_SKIPGRAM_W5_VS50.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W10_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/FastText_CBOW_W10_VS300.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W10_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/FastText_CBOW_W10_VS50.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W5_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/FastText_CBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W5_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/FastText_CBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W10_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/FastText_SKIPGRAM_W10_VS300.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W10_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/FastText_SKIPGRAM_W10_VS50.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W5_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/FastText_SKIPGRAM_W5_VS300.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W5_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/FastText_SKIPGRAM_W5_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W15_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/Doc2Vec_PVDBOW_W15_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W15_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/Doc2Vec_PVDBOW_W15_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W5_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/Doc2Vec_PVDBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W5_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/Doc2Vec_PVDBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W10_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/Doc2Vec_PVDM_W10_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W10_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/Doc2Vec_PVDM_W10_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W5_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/Doc2Vec_PVDM_W5_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W5_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/Doc2Vec_PVDM_W5_VS50.parquet"
+				},
+				{
+					"name": "SBERT_AMLMV2",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/SBERT_AMLMV2.parquet"
+				},
+				{
+					"name": "SBERT_PDBV2",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/SBERT_PDBV2.parquet"
+				},
+				{
+					"name": "SBERT_SRL",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/SMS_short_texts/SBERT_SRL.parquet"
+				}
+			],
+			"dataset": {
+				"path": "../shared/datasets/Short Texts/SMS/cleansed_data.csv",
+				"text_column": "text",
+				"label_columns": [
+					"classification"
+				],
+				"delimiter": ","
+			},
+			"default_executions": 5
+		},
+		{
+			"models": [
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 3,
+						"init": "k-means++",
+						"random_state": 42,
+						"algorithm": "lloyd"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 3,
+						"init": "random",
+						"random_state": 42,
+						"algorithm": "elkan"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 3,
+						"init": "k-means++",
+						"random_state": 42,
+						"algorithm": "lloyd"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 3,
+						"init": "random",
+						"random_state": 42,
+						"algorithm": "elkan"
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 20,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 20,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.5
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.5
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.5
+					}
+				}
+			],
+			"representations": [
+				{
+					"name": "NGram",
+					"klass": "NGram",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/NGram.parquet"
+				},
+				{
+					"name": "LIWC",
+					"klass": "LIWC",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/LIWC.parquet"
+				},
+				{
+					"name": "STagger",
+					"klass": "STagger",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/STagger.parquet"
+				},
+				{
+					"name": "MRC2",
+					"klass": "MRC2",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/MRC2.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W10_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/Word2Vec_CBOW_W10_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W10_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/Word2Vec_CBOW_W10_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W5_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/Word2Vec_CBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W5_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/Word2Vec_CBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_GOOGLE_NEWS_300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/Word2Vec_GOOGLE_NEWS_300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W10_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/Word2Vec_SKIPGRAM_W10_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W10_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/Word2Vec_SKIPGRAM_W10_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W5_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/Word2Vec_SKIPGRAM_W5_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W5_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/Word2Vec_SKIPGRAM_W5_VS50.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W10_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/FastText_CBOW_W10_VS300.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W10_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/FastText_CBOW_W10_VS50.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W5_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/FastText_CBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W5_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/FastText_CBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W10_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/FastText_SKIPGRAM_W10_VS300.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W10_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/FastText_SKIPGRAM_W10_VS50.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W5_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/FastText_SKIPGRAM_W5_VS300.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W5_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/FastText_SKIPGRAM_W5_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W15_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/Doc2Vec_PVDBOW_W15_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W15_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/Doc2Vec_PVDBOW_W15_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W5_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/Doc2Vec_PVDBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W5_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/Doc2Vec_PVDBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W10_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/Doc2Vec_PVDM_W10_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W10_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/Doc2Vec_PVDM_W10_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W5_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/Doc2Vec_PVDM_W5_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W5_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/Doc2Vec_PVDM_W5_VS50.parquet"
+				},
+				{
+					"name": "SBERT_AMLMV2",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/SBERT_AMLMV2.parquet"
+				},
+				{
+					"name": "SBERT_PDBV2",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/SBERT_PDBV2.parquet"
+				},
+				{
+					"name": "SBERT_SRL",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/Truth_Seeker_short_texts/SBERT_SRL.parquet"
+				}
+			],
+			"dataset": {
+				"path": "../shared/datasets/Short Texts/Truth_Seeker/sample_cleansed_data.csv",
+				"text_column": "tweet",
+				"label_columns": [
+					"3_label_majority_answer"
+				],
+				"delimiter": ","
+			},
+			"default_executions": 5
+		},
+		{
+			"models": [
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 3,
+						"init": "k-means++",
+						"random_state": 42,
+						"algorithm": "lloyd"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 3,
+						"init": "random",
+						"random_state": 42,
+						"algorithm": "elkan"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 3,
+						"init": "k-means++",
+						"random_state": 42,
+						"algorithm": "lloyd"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 3,
+						"init": "random",
+						"random_state": 42,
+						"algorithm": "elkan"
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 20,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 20,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.5
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.5
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.5
+					}
+				}
+			],
+			"representations": [
+				{
+					"name": "NGram",
+					"klass": "NGram",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/NGram.parquet"
+				},
+				{
+					"name": "LIWC",
+					"klass": "LIWC",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/LIWC.parquet"
+				},
+				{
+					"name": "STagger",
+					"klass": "STagger",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/STagger.parquet"
+				},
+				{
+					"name": "MRC2",
+					"klass": "MRC2",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/MRC2.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W10_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/Word2Vec_CBOW_W10_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W10_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/Word2Vec_CBOW_W10_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W5_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/Word2Vec_CBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W5_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/Word2Vec_CBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_GOOGLE_NEWS_300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/Word2Vec_GOOGLE_NEWS_300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W10_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/Word2Vec_SKIPGRAM_W10_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W10_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/Word2Vec_SKIPGRAM_W10_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W5_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/Word2Vec_SKIPGRAM_W5_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W5_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/Word2Vec_SKIPGRAM_W5_VS50.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W10_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/FastText_CBOW_W10_VS300.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W10_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/FastText_CBOW_W10_VS50.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W5_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/FastText_CBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W5_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/FastText_CBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W10_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/FastText_SKIPGRAM_W10_VS300.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W10_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/FastText_SKIPGRAM_W10_VS50.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W5_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/FastText_SKIPGRAM_W5_VS300.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W5_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/FastText_SKIPGRAM_W5_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W15_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/Doc2Vec_PVDBOW_W15_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W15_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/Doc2Vec_PVDBOW_W15_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W5_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/Doc2Vec_PVDBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W5_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/Doc2Vec_PVDBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W10_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/Doc2Vec_PVDM_W10_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W10_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/Doc2Vec_PVDM_W10_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W5_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/Doc2Vec_PVDM_W5_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W5_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/Doc2Vec_PVDM_W5_VS50.parquet"
+				},
+				{
+					"name": "SBERT_AMLMV2",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/SBERT_AMLMV2.parquet"
+				},
+				{
+					"name": "SBERT_PDBV2",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/SBERT_PDBV2.parquet"
+				},
+				{
+					"name": "SBERT_SRL",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/arXiv_abstracts/SBERT_SRL.parquet"
+				}
+			],
+			"dataset": {
+				"path": "../shared/datasets/Abstracts/arXiv/sample_filtered_cleansed_data.csv",
+				"text_column": "abstracts",
+				"label_columns": [
+					"major_terms"
+				],
+				"delimiter": ","
+			},
+			"default_executions": 5
+		},
+		{
+			"models": [
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 3,
+						"init": "k-means++",
+						"random_state": 42,
+						"algorithm": "lloyd"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 3,
+						"init": "random",
+						"random_state": 42,
+						"algorithm": "elkan"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 3,
+						"init": "k-means++",
+						"random_state": 42,
+						"algorithm": "lloyd"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 3,
+						"init": "random",
+						"random_state": 42,
+						"algorithm": "elkan"
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 20,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 20,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.5
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.5
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.5
+					}
+				}
+			],
+			"representations": [
+				{
+					"name": "NGram",
+					"klass": "NGram",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/NGram.parquet"
+				},
+				{
+					"name": "LIWC",
+					"klass": "LIWC",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/LIWC.parquet"
+				},
+				{
+					"name": "STagger",
+					"klass": "STagger",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/STagger.parquet"
+				},
+				{
+					"name": "MRC2",
+					"klass": "MRC2",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/MRC2.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W10_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/Word2Vec_CBOW_W10_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W10_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/Word2Vec_CBOW_W10_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W5_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/Word2Vec_CBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W5_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/Word2Vec_CBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_GOOGLE_NEWS_300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/Word2Vec_GOOGLE_NEWS_300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W10_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/Word2Vec_SKIPGRAM_W10_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W10_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/Word2Vec_SKIPGRAM_W10_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W5_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/Word2Vec_SKIPGRAM_W5_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W5_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/Word2Vec_SKIPGRAM_W5_VS50.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W10_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/FastText_CBOW_W10_VS300.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W10_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/FastText_CBOW_W10_VS50.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W5_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/FastText_CBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W5_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/FastText_CBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W10_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/FastText_SKIPGRAM_W10_VS300.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W10_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/FastText_SKIPGRAM_W10_VS50.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W5_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/FastText_SKIPGRAM_W5_VS300.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W5_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/FastText_SKIPGRAM_W5_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W15_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/Doc2Vec_PVDBOW_W15_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W15_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/Doc2Vec_PVDBOW_W15_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W5_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/Doc2Vec_PVDBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W5_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/Doc2Vec_PVDBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W10_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/Doc2Vec_PVDM_W10_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W10_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/Doc2Vec_PVDM_W10_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W5_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/Doc2Vec_PVDM_W5_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W5_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/Doc2Vec_PVDM_W5_VS50.parquet"
+				},
+				{
+					"name": "SBERT_AMLMV2",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/SBERT_AMLMV2.parquet"
+				},
+				{
+					"name": "SBERT_PDBV2",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/SBERT_PDBV2.parquet"
+				},
+				{
+					"name": "SBERT_SRL",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/Klinger_abstracts/SBERT_SRL.parquet"
+				}
+			],
+			"dataset": {
+				"path": "../shared/datasets/Abstracts/Klinger/sample_filtered_cleansed_joined_data.csv",
+				"text_column": "abstracts",
+				"label_columns": [
+					"method"
+				],
+				"delimiter": ","
+			},
+			"default_executions": 5
+		},
+		{
+			"models": [
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 6,
+						"init": "k-means++",
+						"random_state": 42,
+						"algorithm": "lloyd"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 6,
+						"init": "random",
+						"random_state": 42,
+						"algorithm": "elkan"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 6,
+						"init": "k-means++",
+						"random_state": 42,
+						"algorithm": "lloyd"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 6,
+						"init": "random",
+						"random_state": 42,
+						"algorithm": "elkan"
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 20,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 20,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.5
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.5
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.5
+					}
+				}
+			],
+			"representations": [
+				{
+					"name": "NGram",
+					"klass": "NGram",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/NGram.parquet"
+				},
+				{
+					"name": "LIWC",
+					"klass": "LIWC",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/LIWC.parquet"
+				},
+				{
+					"name": "STagger",
+					"klass": "STagger",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/STagger.parquet"
+				},
+				{
+					"name": "MRC2",
+					"klass": "MRC2",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/MRC2.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W10_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/Word2Vec_CBOW_W10_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W10_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/Word2Vec_CBOW_W10_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W5_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/Word2Vec_CBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W5_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/Word2Vec_CBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_GOOGLE_NEWS_300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/Word2Vec_GOOGLE_NEWS_300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W10_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/Word2Vec_SKIPGRAM_W10_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W10_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/Word2Vec_SKIPGRAM_W10_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W5_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/Word2Vec_SKIPGRAM_W5_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W5_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/Word2Vec_SKIPGRAM_W5_VS50.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W10_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/FastText_CBOW_W10_VS300.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W10_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/FastText_CBOW_W10_VS50.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W5_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/FastText_CBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W5_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/FastText_CBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W10_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/FastText_SKIPGRAM_W10_VS300.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W10_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/FastText_SKIPGRAM_W10_VS50.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W5_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/FastText_SKIPGRAM_W5_VS300.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W5_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/FastText_SKIPGRAM_W5_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W15_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/Doc2Vec_PVDBOW_W15_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W15_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/Doc2Vec_PVDBOW_W15_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W5_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/Doc2Vec_PVDBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W5_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/Doc2Vec_PVDBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W10_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/Doc2Vec_PVDM_W10_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W10_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/Doc2Vec_PVDM_W10_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W5_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/Doc2Vec_PVDM_W5_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W5_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/Doc2Vec_PVDM_W5_VS50.parquet"
+				},
+				{
+					"name": "SBERT_AMLMV2",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/SBERT_AMLMV2.parquet"
+				},
+				{
+					"name": "SBERT_PDBV2",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/SBERT_PDBV2.parquet"
+				},
+				{
+					"name": "SBERT_SRL",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/NLP_Research_abstracts/SBERT_SRL.parquet"
+				}
+			],
+			"dataset": {
+				"path": "../shared/datasets/Abstracts/NLP_Research/sample_filtered_cleansed_data.csv",
+				"text_column": "abstract",
+				"label_columns": [
+					"topic"
+				],
+				"delimiter": ","
+			},
+			"default_executions": 5
+		},
+		{
+			"models": [
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 5,
+						"init": "k-means++",
+						"random_state": 42,
+						"algorithm": "lloyd"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 5,
+						"init": "random",
+						"random_state": 42,
+						"algorithm": "elkan"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 5,
+						"init": "k-means++",
+						"random_state": 42,
+						"algorithm": "lloyd"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 5,
+						"init": "random",
+						"random_state": 42,
+						"algorithm": "elkan"
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 20,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 20,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.5
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.5
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.5
+					}
+				}
+			],
+			"representations": [
+				{
+					"name": "NGram",
+					"klass": "NGram",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/NGram.parquet"
+				},
+				{
+					"name": "LIWC",
+					"klass": "LIWC",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/LIWC.parquet"
+				},
+				{
+					"name": "STagger",
+					"klass": "STagger",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/STagger.parquet"
+				},
+				{
+					"name": "MRC2",
+					"klass": "MRC2",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/MRC2.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W10_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/Word2Vec_CBOW_W10_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W10_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/Word2Vec_CBOW_W10_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W5_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/Word2Vec_CBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W5_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/Word2Vec_CBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_GOOGLE_NEWS_300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/Word2Vec_GOOGLE_NEWS_300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W10_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/Word2Vec_SKIPGRAM_W10_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W10_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/Word2Vec_SKIPGRAM_W10_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W5_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/Word2Vec_SKIPGRAM_W5_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W5_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/Word2Vec_SKIPGRAM_W5_VS50.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W10_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/FastText_CBOW_W10_VS300.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W10_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/FastText_CBOW_W10_VS50.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W5_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/FastText_CBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W5_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/FastText_CBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W10_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/FastText_SKIPGRAM_W10_VS300.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W10_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/FastText_SKIPGRAM_W10_VS50.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W5_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/FastText_SKIPGRAM_W5_VS300.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W5_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/FastText_SKIPGRAM_W5_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W15_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/Doc2Vec_PVDBOW_W15_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W15_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/Doc2Vec_PVDBOW_W15_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W5_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/Doc2Vec_PVDBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W5_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/Doc2Vec_PVDBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W10_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/Doc2Vec_PVDM_W10_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W10_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/Doc2Vec_PVDM_W10_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W5_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/Doc2Vec_PVDM_W5_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W5_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/Doc2Vec_PVDM_W5_VS50.parquet"
+				},
+				{
+					"name": "SBERT_AMLMV2",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/SBERT_AMLMV2.parquet"
+				},
+				{
+					"name": "SBERT_PDBV2",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/SBERT_PDBV2.parquet"
+				},
+				{
+					"name": "SBERT_SRL",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/Covid_Articles_news/SBERT_SRL.parquet"
+				}
+			],
+			"dataset": {
+				"path": "../shared/datasets/News/CovidArticles/sample_cleansed_data.csv",
+				"text_column": "content",
+				"label_columns": [
+					"category"
+				],
+				"delimiter": ","
+			},
+			"default_executions": 5
+		},
+		{
+			"models": [
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 2,
+						"init": "k-means++",
+						"random_state": 42,
+						"algorithm": "lloyd"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 2,
+						"init": "random",
+						"random_state": 42,
+						"algorithm": "elkan"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 2,
+						"init": "k-means++",
+						"random_state": 42,
+						"algorithm": "lloyd"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 2,
+						"init": "random",
+						"random_state": 42,
+						"algorithm": "elkan"
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 20,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 20,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.5
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.5
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.5
+					}
+				}
+			],
+			"representations": [
+				{
+					"name": "NGram",
+					"klass": "NGram",
+					"parquet_path": "../shared/embeddings/WELFake_news/NGram.parquet"
+				},
+				{
+					"name": "LIWC",
+					"klass": "LIWC",
+					"parquet_path": "../shared/embeddings/WELFake_news/LIWC.parquet"
+				},
+				{
+					"name": "STagger",
+					"klass": "STagger",
+					"parquet_path": "../shared/embeddings/WELFake_news/STagger.parquet"
+				},
+				{
+					"name": "MRC2",
+					"klass": "MRC2",
+					"parquet_path": "../shared/embeddings/WELFake_news/MRC2.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W10_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/WELFake_news/Word2Vec_CBOW_W10_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W10_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/WELFake_news/Word2Vec_CBOW_W10_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W5_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/WELFake_news/Word2Vec_CBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W5_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/WELFake_news/Word2Vec_CBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_GOOGLE_NEWS_300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/WELFake_news/Word2Vec_GOOGLE_NEWS_300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W10_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/WELFake_news/Word2Vec_SKIPGRAM_W10_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W10_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/WELFake_news/Word2Vec_SKIPGRAM_W10_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W5_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/WELFake_news/Word2Vec_SKIPGRAM_W5_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W5_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/WELFake_news/Word2Vec_SKIPGRAM_W5_VS50.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W10_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/WELFake_news/FastText_CBOW_W10_VS300.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W10_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/WELFake_news/FastText_CBOW_W10_VS50.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W5_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/WELFake_news/FastText_CBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W5_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/WELFake_news/FastText_CBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W10_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/WELFake_news/FastText_SKIPGRAM_W10_VS300.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W10_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/WELFake_news/FastText_SKIPGRAM_W10_VS50.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W5_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/WELFake_news/FastText_SKIPGRAM_W5_VS300.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W5_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/WELFake_news/FastText_SKIPGRAM_W5_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W15_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/WELFake_news/Doc2Vec_PVDBOW_W15_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W15_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/WELFake_news/Doc2Vec_PVDBOW_W15_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W5_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/WELFake_news/Doc2Vec_PVDBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W5_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/WELFake_news/Doc2Vec_PVDBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W10_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/WELFake_news/Doc2Vec_PVDM_W10_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W10_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/WELFake_news/Doc2Vec_PVDM_W10_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W5_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/WELFake_news/Doc2Vec_PVDM_W5_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W5_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/WELFake_news/Doc2Vec_PVDM_W5_VS50.parquet"
+				},
+				{
+					"name": "SBERT_AMLMV2",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/WELFake_news/SBERT_AMLMV2.parquet"
+				},
+				{
+					"name": "SBERT_PDBV2",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/WELFake_news/SBERT_PDBV2.parquet"
+				},
+				{
+					"name": "SBERT_SRL",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/WELFake_news/SBERT_SRL.parquet"
+				}
+			],
+			"dataset": {
+				"path": "../shared/datasets/News/WELFake/sample_cleansed_train_file.csv",
+				"text_column": "text",
+				"label_columns": [
+					"label"
+				],
+				"delimiter": ","
+			},
+			"default_executions": 5
+		},
+		{
+			"models": [
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 4,
+						"init": "k-means++",
+						"random_state": 42,
+						"algorithm": "lloyd"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 4,
+						"init": "random",
+						"random_state": 42,
+						"algorithm": "elkan"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 4,
+						"init": "k-means++",
+						"random_state": 42,
+						"algorithm": "lloyd"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 4,
+						"init": "random",
+						"random_state": 42,
+						"algorithm": "elkan"
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 20,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 20,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.5
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.5
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.5
+					}
+				}
+			],
+			"representations": [
+				{
+					"name": "NGram",
+					"klass": "NGram",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/NGram.parquet"
+				},
+				{
+					"name": "LIWC",
+					"klass": "LIWC",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/LIWC.parquet"
+				},
+				{
+					"name": "STagger",
+					"klass": "STagger",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/STagger.parquet"
+				},
+				{
+					"name": "MRC2",
+					"klass": "MRC2",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/MRC2.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W10_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/Word2Vec_CBOW_W10_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W10_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/Word2Vec_CBOW_W10_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W5_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/Word2Vec_CBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W5_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/Word2Vec_CBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_GOOGLE_NEWS_300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/Word2Vec_GOOGLE_NEWS_300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W10_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/Word2Vec_SKIPGRAM_W10_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W10_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/Word2Vec_SKIPGRAM_W10_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W5_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/Word2Vec_SKIPGRAM_W5_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W5_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/Word2Vec_SKIPGRAM_W5_VS50.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W10_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/FastText_CBOW_W10_VS300.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W10_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/FastText_CBOW_W10_VS50.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W5_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/FastText_CBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W5_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/FastText_CBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W10_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/FastText_SKIPGRAM_W10_VS300.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W10_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/FastText_SKIPGRAM_W10_VS50.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W5_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/FastText_SKIPGRAM_W5_VS300.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W5_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/FastText_SKIPGRAM_W5_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W15_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/Doc2Vec_PVDBOW_W15_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W15_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/Doc2Vec_PVDBOW_W15_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W5_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/Doc2Vec_PVDBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W5_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/Doc2Vec_PVDBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W10_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/Doc2Vec_PVDM_W10_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W10_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/Doc2Vec_PVDM_W10_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W5_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/Doc2Vec_PVDM_W5_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W5_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/Doc2Vec_PVDM_W5_VS50.parquet"
+				},
+				{
+					"name": "SBERT_AMLMV2",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/SBERT_AMLMV2.parquet"
+				},
+				{
+					"name": "SBERT_PDBV2",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/SBERT_PDBV2.parquet"
+				},
+				{
+					"name": "SBERT_SRL",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/News_Popularity_news/SBERT_SRL.parquet"
+				}
+			],
+			"dataset": {
+				"path": "../shared/datasets/News/NewsPopularity/sample_cleansed_train_file.csv",
+				"text_column": "Headline",
+				"label_columns": [
+					"Topic"
+				],
+				"delimiter": ","
+			},
+			"default_executions": 5
+		},
+		{
+			"models": [
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 10,
+						"init": "k-means++",
+						"random_state": 42,
+						"algorithm": "lloyd"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 10,
+						"init": "random",
+						"random_state": 42,
+						"algorithm": "elkan"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 10,
+						"init": "k-means++",
+						"random_state": 42,
+						"algorithm": "lloyd"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 10,
+						"init": "random",
+						"random_state": 42,
+						"algorithm": "elkan"
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 20,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 20,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.5
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.5
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.5
+					}
+				}
+			],
+			"representations": [
+				{
+					"name": "NGram",
+					"klass": "NGram",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/NGram.parquet"
+				},
+				{
+					"name": "LIWC",
+					"klass": "LIWC",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/LIWC.parquet"
+				},
+				{
+					"name": "STagger",
+					"klass": "STagger",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/STagger.parquet"
+				},
+				{
+					"name": "MRC2",
+					"klass": "MRC2",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/MRC2.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W10_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/Word2Vec_CBOW_W10_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W10_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/Word2Vec_CBOW_W10_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W5_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/Word2Vec_CBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W5_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/Word2Vec_CBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_GOOGLE_NEWS_300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/Word2Vec_GOOGLE_NEWS_300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W10_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/Word2Vec_SKIPGRAM_W10_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W10_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/Word2Vec_SKIPGRAM_W10_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W5_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/Word2Vec_SKIPGRAM_W5_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W5_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/Word2Vec_SKIPGRAM_W5_VS50.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W10_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/FastText_CBOW_W10_VS300.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W10_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/FastText_CBOW_W10_VS50.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W5_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/FastText_CBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W5_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/FastText_CBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W10_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/FastText_SKIPGRAM_W10_VS300.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W10_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/FastText_SKIPGRAM_W10_VS50.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W5_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/FastText_SKIPGRAM_W5_VS300.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W5_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/FastText_SKIPGRAM_W5_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W15_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/Doc2Vec_PVDBOW_W15_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W15_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/Doc2Vec_PVDBOW_W15_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W5_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/Doc2Vec_PVDBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W5_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/Doc2Vec_PVDBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W10_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/Doc2Vec_PVDM_W10_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W10_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/Doc2Vec_PVDM_W10_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W5_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/Doc2Vec_PVDM_W5_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W5_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/Doc2Vec_PVDM_W5_VS50.parquet"
+				},
+				{
+					"name": "SBERT_AMLMV2",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/SBERT_AMLMV2.parquet"
+				},
+				{
+					"name": "SBERT_PDBV2",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/SBERT_PDBV2.parquet"
+				},
+				{
+					"name": "SBERT_SRL",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/Drug_Reviews_reviews/SBERT_SRL.parquet"
+				}
+			],
+			"dataset": {
+				"path": "../shared/datasets/Reviews/DrugReviews/sample_cleansed_train_data.csv",
+				"text_column": "review",
+				"label_columns": [
+					"rating"
+				],
+				"delimiter": ","
+			},
+			"default_executions": 5
+		},
+		{
+			"models": [
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 11,
+						"init": "k-means++",
+						"random_state": 42,
+						"algorithm": "lloyd"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 11,
+						"init": "random",
+						"random_state": 42,
+						"algorithm": "elkan"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 11,
+						"init": "k-means++",
+						"random_state": 42,
+						"algorithm": "lloyd"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 11,
+						"init": "random",
+						"random_state": 42,
+						"algorithm": "elkan"
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 20,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 20,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.5
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.5
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.5
+					}
+				}
+			],
+			"representations": [
+				{
+					"name": "NGram",
+					"klass": "NGram",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/NGram.parquet"
+				},
+				{
+					"name": "LIWC",
+					"klass": "LIWC",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/LIWC.parquet"
+				},
+				{
+					"name": "STagger",
+					"klass": "STagger",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/STagger.parquet"
+				},
+				{
+					"name": "MRC2",
+					"klass": "MRC2",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/MRC2.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W10_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/Word2Vec_CBOW_W10_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W10_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/Word2Vec_CBOW_W10_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W5_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/Word2Vec_CBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W5_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/Word2Vec_CBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_GOOGLE_NEWS_300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/Word2Vec_GOOGLE_NEWS_300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W10_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/Word2Vec_SKIPGRAM_W10_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W10_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/Word2Vec_SKIPGRAM_W10_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W5_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/Word2Vec_SKIPGRAM_W5_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W5_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/Word2Vec_SKIPGRAM_W5_VS50.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W10_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/FastText_CBOW_W10_VS300.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W10_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/FastText_CBOW_W10_VS50.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W5_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/FastText_CBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W5_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/FastText_CBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W10_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/FastText_SKIPGRAM_W10_VS300.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W10_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/FastText_SKIPGRAM_W10_VS50.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W5_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/FastText_SKIPGRAM_W5_VS300.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W5_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/FastText_SKIPGRAM_W5_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W15_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/Doc2Vec_PVDBOW_W15_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W15_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/Doc2Vec_PVDBOW_W15_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W5_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/Doc2Vec_PVDBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W5_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/Doc2Vec_PVDBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W10_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/Doc2Vec_PVDM_W10_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W10_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/Doc2Vec_PVDM_W10_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W5_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/Doc2Vec_PVDM_W5_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W5_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/Doc2Vec_PVDM_W5_VS50.parquet"
+				},
+				{
+					"name": "SBERT_AMLMV2",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/SBERT_AMLMV2.parquet"
+				},
+				{
+					"name": "SBERT_PDBV2",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/SBERT_PDBV2.parquet"
+				},
+				{
+					"name": "SBERT_SRL",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/Pitchfork_reviews/SBERT_SRL.parquet"
+				}
+			],
+			"dataset": {
+				"path": "../shared/datasets/Reviews/Pitchfork/sample_cleansed_data.csv",
+				"text_column": "review",
+				"label_columns": [
+					"score_class"
+				],
+				"delimiter": ","
+			},
+			"default_executions": 5
+		},
+		{
+			"models": [
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 2,
+						"init": "k-means++",
+						"random_state": 42,
+						"algorithm": "lloyd"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 2,
+						"init": "random",
+						"random_state": 42,
+						"algorithm": "elkan"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 2,
+						"init": "k-means++",
+						"random_state": 42,
+						"algorithm": "lloyd"
+					}
+				},
+				{
+					"klass": "KMeans",
+					"params": {
+						"n_clusters": 2,
+						"init": "random",
+						"random_state": 42,
+						"algorithm": "elkan"
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"cluster_selection_method": "eom",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "HDBSCAN",
+					"params": {
+						"min_cluster_size": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"cluster_selection_method": "leaf",
+						"allow_single_cluster": true
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.15
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 20,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 20,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.25
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.35
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.375
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "brute",
+						"eps": 0.5
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "kd_tree",
+						"eps": 0.5
+					}
+				},
+				{
+					"klass": "DBSCAN",
+					"params": {
+						"min_samples": 40,
+						"metric": "cosine",
+						"algorithm": "ball_tree",
+						"eps": 0.5
+					}
+				}
+			],
+			"representations": [
+				{
+					"name": "NGram",
+					"klass": "NGram",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/NGram.parquet"
+				},
+				{
+					"name": "LIWC",
+					"klass": "LIWC",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/LIWC.parquet"
+				},
+				{
+					"name": "STagger",
+					"klass": "STagger",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/STagger.parquet"
+				},
+				{
+					"name": "MRC2",
+					"klass": "MRC2",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/MRC2.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W10_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/Word2Vec_CBOW_W10_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W10_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/Word2Vec_CBOW_W10_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W5_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/Word2Vec_CBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_CBOW_W5_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/Word2Vec_CBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_GOOGLE_NEWS_300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/Word2Vec_GOOGLE_NEWS_300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W10_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/Word2Vec_SKIPGRAM_W10_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W10_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/Word2Vec_SKIPGRAM_W10_VS50.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W5_VS300",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/Word2Vec_SKIPGRAM_W5_VS300.parquet"
+				},
+				{
+					"name": "Word2Vec_SKIPGRAM_W5_VS50",
+					"klass": "Word2Vec",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/Word2Vec_SKIPGRAM_W5_VS50.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W10_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/FastText_CBOW_W10_VS300.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W10_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/FastText_CBOW_W10_VS50.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W5_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/FastText_CBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "FastText_CBOW_W5_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/FastText_CBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W10_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/FastText_SKIPGRAM_W10_VS300.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W10_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/FastText_SKIPGRAM_W10_VS50.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W5_VS300",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/FastText_SKIPGRAM_W5_VS300.parquet"
+				},
+				{
+					"name": "FastText_SKIPGRAM_W5_VS50",
+					"klass": "FastText",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/FastText_SKIPGRAM_W5_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W15_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/Doc2Vec_PVDBOW_W15_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W15_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/Doc2Vec_PVDBOW_W15_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W5_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/Doc2Vec_PVDBOW_W5_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDBOW_W5_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/Doc2Vec_PVDBOW_W5_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W10_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/Doc2Vec_PVDM_W10_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W10_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/Doc2Vec_PVDM_W10_VS50.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W5_VS300",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/Doc2Vec_PVDM_W5_VS300.parquet"
+				},
+				{
+					"name": "Doc2Vec_PVDM_W5_VS50",
+					"klass": "Doc2Vec",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/Doc2Vec_PVDM_W5_VS50.parquet"
+				},
+				{
+					"name": "SBERT_AMLMV2",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/SBERT_AMLMV2.parquet"
+				},
+				{
+					"name": "SBERT_PDBV2",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/SBERT_PDBV2.parquet"
+				},
+				{
+					"name": "SBERT_SRL",
+					"klass": "SBert",
+					"parquet_path": "../shared/embeddings/Sentiment_Labelled_reviews/SBERT_SRL.parquet"
+				}
+			],
+			"dataset": {
+				"path": "../shared/datasets/Reviews/Sentiment Labelled/cleansed_data.csv",
+				"text_column": "text",
+				"label_columns": [
+					"label"
+				],
+				"delimiter": ","
+			},
+			"default_executions": 5
+		}
+	]
+}

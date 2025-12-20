@@ -362,9 +362,9 @@ class EmbeddingGenerator:
         gc.collect()
 
         # Clear CUDA cache
-        if cuda.is_available():
-            cuda.empty_cache()
-            cuda.synchronize()
+        # if cuda.is_available():
+            # cuda.empty_cache()
+            # cuda.synchronize()
 
         self.__logger_.debug(
             "Cleaned memory and CUDA cache in %0.5f second(s)", time() - clean_start
@@ -523,6 +523,9 @@ class EmbeddingGenerator:
 
 def main():
     """Main entry point."""
+    import spacy
+    
+    spacy.require_cpu()
     import argparse
 
     parser = argparse.ArgumentParser(

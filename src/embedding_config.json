@@ -3485,7 +3485,7 @@
         {
             "path": "../shared/datasets/Short Texts/Truth_Seeker/sample_cleansed_data.csv",
             "dataset_name": "Truth_Seeker_short_texts",
-            "text_column": "abstracts",
+            "text_column": "text",
             "delimiter": ",",
             "representations": [
                 {

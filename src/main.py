@@ -14,6 +14,7 @@ import spacy
 from torch import multiprocessing as tmp
 
 from ainet_executor import AiNetExecutor
+from other_clusterings_executor import OtherClusteringsExecutor
 
 stdout.reconfigure(line_buffering=True)  # type: ignore
 
@@ -56,7 +57,7 @@ if __name__ == "__main__":
 
     lg.log(lg.DEBUG, "script started")
     try:
-        EXECUTION_PLAN_FILE = "executions.json"
+        EXECUTION_PLAN_FILE = "new_tests_config.json"
 
         if len(argv) > 1:
             ARGV_PLAN_FILE = argv[1]
@@ -77,7 +78,7 @@ if __name__ == "__main__":
 
             lg.log(lg.INFO, "execution plan '%s' loaded", EXECUTION_PLAN_FILE)
 
-        executor = AiNetExecutor(logger=root_log)
+        executor = OtherClusteringsExecutor(logger=root_log)
         executor.execute(executions_plans=executions["executions_plans"])
     except Exception as ex:
         root_log.error(ex, exc_info=True)

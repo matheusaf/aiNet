@@ -135,7 +135,7 @@ class MRC2(Representation):
         "O": "X",
     } """
 
-    def __init__(self, dic_filepath: str | pathlib.Path | None) -> None:
+    def __init__(self, dic_filepath: str | pathlib.Path | None, use_gpu: bool = False) -> None:
         super().__init__(stop_word_removal_enabled=False)
         self._pickle_filepath = os.path.dirname(__file__) + "/mrc.pickle"
         has_pickle: bool = os.path.exists(self._pickle_filepath)
@@ -146,7 +146,7 @@ class MRC2(Representation):
 
         self.features = self.__numerical_category_names_
         self._representation = np.array([])
-        self._stagger = STagger()
+        self._stagger = STagger(use_gpu=use_gpu)
         self._mrc_dic = {}
 
         if has_pickle:
@@ -402,7 +402,7 @@ if __name__ == "__main__":
     dic_path: pathlib.Path = (
         pathlib.Path(__file__).parents[3] / "shared/dictionaries/mrc" / "mrc2.dct"
     )
-    mrc = MRC2(dic_filepath=dic_path)
+    mrc = MRC2(dic_filepath=dic_path, use_gpu=False)
     start = time.time()
 
     data = [

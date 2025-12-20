@@ -70,15 +70,20 @@ class STagger(Representation):
 
     _spacy_model: English | Any
 
-    def __init__(self, spacy_model_name: str = "en_core_web_sm") -> None:
+    def __init__(self, spacy_model_name: str = "en_core_web_sm", use_gpu: bool = True) -> None:
         super().__init__(stop_word_removal_enabled=False)
         try:
             assert spacy_model_name in util.get_installed_models()
         except AssertionError:
             stanza.download("en")
         finally:
+            if not use_gpu:
+                spacy.require_cpu()  # type: ignore
+            else:
+                spacy.prefer_gpu()  # type: ignore
+
             self._spacy_model = spacy_stanza.load_pipeline(
-                "en", use_gpu=True, processors="tokenize, pos", download_method=None
+                "en", use_gpu=use_gpu, processors="tokenize, pos", download_method=None
             )
             self.features = np.array(
                 sorted(parts_of_speech.IDS.keys())[1:],  # type: ignore
