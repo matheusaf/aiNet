@@ -399,7 +399,7 @@ class OtherClustersExecutor:
 		text_column: str,
 		label_columns: np.ndarray,
 		default_n_executions: int,
-		model: DBSCAN | KMeans | SphericalKMeans,
+		model: DBSCAN | KMeans | HDBSCAN,
         klass_name: str,
 		klass_params: dict,
 		result_file_name: str,
@@ -545,7 +545,7 @@ class OtherClustersExecutor:
 				)
 	def __execute_representation_iter_(
 		self,
-		model: DBSCAN | KMeans | SphericalKMeans,
+		model: DBSCAN | KMeans | HDBSCAN,
 		cdist: np.ndarray,
 		edist: np.ndarray,
 		representation_model_name: str,
